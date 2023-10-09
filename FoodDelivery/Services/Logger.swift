@@ -10,7 +10,7 @@ import Foundation
 enum Logger {
     
     // MARK: - Properties
-    static var isLoggingEnabled = false // Flag to enable/disable logging
+    static var isLoggingEnabled = true // Flag to enable/disable logging
     
 }
 

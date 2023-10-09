@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */; };
 		D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */; };
 		D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37F2AD3EE65001C7303 /* Logger.swift */; };
 		D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613452AD3273000793F8F /* CustomNavigationView.swift */; };
@@ -22,9 +23,13 @@
 		D2C721472AD2FC5800B2C601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C721452AD2FC5800B2C601 /* Main.storyboard */; };
 		D2C721492AD2FC5A00B2C601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C721482AD2FC5A00B2C601 /* Assets.xcassets */; };
 		D2C7214C2AD2FC5A00B2C601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C7214A2AD2FC5A00B2C601 /* LaunchScreen.storyboard */; };
+		D2E6636A2AD47760005CCA62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E663692AD47760005CCA62 /* NetworkManager.swift */; };
+		D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */; };
+		D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E663702AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = "<group>"; };
 		D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D26DF37F2AD3EE65001C7303 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D2A613452AD3273000793F8F /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
@@ -42,6 +47,9 @@
 		D2C721482AD2FC5A00B2C601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C7214B2AD2FC5A00B2C601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2C7214D2AD2FC5A00B2C601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E663692AD47760005CCA62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
+		D2E663702AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D233A8AA2AD41E6500692597 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */,
+				D2E663702AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		D2A613472AD32DC200793F8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +96,7 @@
 			children = (
 				D2C721432AD2FC5800B2C601 /* StartViewController.swift */,
 				D2A6134A2AD3345200793F8F /* StartScreenViewModel.swift */,
+				D233A8AA2AD41E6500692597 /* CustomCells */,
 			);
 			path = StartScreen;
 			sourceTree = "<group>";
@@ -99,6 +117,7 @@
 				D2A613562AD3599D00793F8F /* CustomNavigationController.swift */,
 				D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */,
 				D26DF37F2AD3EE65001C7303 /* Logger.swift */,
+				D2E663692AD47760005CCA62 /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -132,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A613532AD3501000793F8F /* Services */,
+				D2E6636D2AD47A48005CCA62 /* Models */,
 				D2A613492AD333F200793F8F /* StartScreen */,
 				D2C721532AD2FC9F00B2C601 /* Layouts */,
 				D2A613482AD32DE200793F8F /* Resources */,
@@ -148,6 +168,14 @@
 				D2C7214A2AD2FC5A00B2C601 /* LaunchScreen.storyboard */,
 			);
 			path = Layouts;
+			sourceTree = "<group>";
+		};
+		D2E6636D2AD47A48005CCA62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,13 +251,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E6636A2AD47760005CCA62 /* NetworkManager.swift in Sources */,
 				D2C721442AD2FC5800B2C601 /* StartViewController.swift in Sources */,
 				D2A6135A2AD3616800793F8F /* LocationManagerViewModel.swift in Sources */,
 				D2C721402AD2FC5800B2C601 /* AppDelegate.swift in Sources */,
 				D2A613552AD3508800793F8F /* LocationManager.swift in Sources */,
 				D2C721422AD2FC5800B2C601 /* SceneDelegate.swift in Sources */,
+				D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */,
 				D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */,
+				D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */,
 				D2A6134B2AD3345200793F8F /* StartScreenViewModel.swift in Sources */,
+				D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */,
 				D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */,
 				D2A613572AD3599D00793F8F /* CustomNavigationController.swift in Sources */,
 				D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */,

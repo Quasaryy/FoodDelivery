@@ -13,7 +13,15 @@ class CustomTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTopBorderToTabBar()
+        alwaysWhiteTabBar()
+        adjustTabBarItemsPosition()
+        chnageBorderColor()
+    }
+    
+    // MARK: - viewDidLayoutSubviews
+    
+    override func viewDidLayoutSubviews() {
+        changeHieghtTabBar()
     }
     
 }
@@ -21,14 +29,41 @@ class CustomTabBarController: UITabBarController {
 // MARK: - Methods
 
 extension CustomTabBarController {
-    func addTopBorderToTabBar() {
-        let borderHeight: CGFloat = 1.0 // Высота бордера
-        let yOffset: CGFloat = -10 // Отступ от верха иконки на UITabBar
-        
-        let borderView = UIView(frame: CGRect(x: 0, y: yOffset, width: tabBar.bounds.width, height: borderHeight))
-        borderView.backgroundColor = UIColor(red: 232/255, green: 233/255, blue: 236/255, alpha: 1) // Цвет бордера
-        tabBar.addSubview(borderView)
-        tabBar.sendSubviewToBack(borderView)
+    private func alwaysWhiteTabBar() {
+        tabBar.backgroundColor = .white
+        tabBar.isTranslucent = false
+    }
+    
+    private func adjustTabBarItemsPosition() {
+        let yOffset: CGFloat = 3 // корректировка вертикального положения иконки
+        for item in tabBar.items! {
+            item.imageInsets = UIEdgeInsets(top: yOffset, left: 0, bottom: -yOffset, right: 0)
+        }
+    }
+    
+    private func imageWithColor(color: UIColor, size: CGSize) -> UIImage? {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    private func chnageBorderColor() {
+        tabBar.backgroundImage = UIImage()
+        if let borderColorImage = imageWithColor(color: UIColor(red: 232/255, green: 233/255, blue: 236/255, alpha: 1), size: CGSize(width: tabBar.bounds.width, height: 1)) {
+            tabBar.shadowImage = borderColorImage
+        }
+    }
+    
+    private func changeHieghtTabBar() {
+        var newFrame = tabBar.frame
+        let newHeight: CGFloat = 88 // высота ТабБара
+        newFrame.size.height = newHeight
+        newFrame.origin.y = view.frame.size.height - newHeight
+        tabBar.frame = newFrame
     }
     
 }

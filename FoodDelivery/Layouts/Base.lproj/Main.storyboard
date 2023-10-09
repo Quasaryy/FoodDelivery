@@ -5,8 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Поиск-->
         <scene sceneID="7y6-W5-20o">
@@ -64,23 +70,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOK-x2-J8B">
-                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JaG-M7-TLW">
+                                <rect key="frame" x="0.0" y="111" width="393" height="658"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hmm-z3-YEB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainScreenCell" id="372-dQ-zfQ" customClass="StartCollectionViewCell" customModule="FoodDelivery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PgJ-je-VAR">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lpv-6a-bqs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjk-WW-SQt">
+                                                    <rect key="frame" x="16" y="12" width="102" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="191" id="urS-8g-g94"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mjk-WW-SQt" firstAttribute="leading" secondItem="PgJ-je-VAR" secondAttribute="leading" constant="16" id="07e-Wd-kVQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="lpv-6a-bqs" secondAttribute="bottom" id="1M3-0N-R1J"/>
+                                                <constraint firstAttribute="trailing" secondItem="lpv-6a-bqs" secondAttribute="trailing" id="Bed-MB-LqC"/>
+                                                <constraint firstItem="Mjk-WW-SQt" firstAttribute="top" secondItem="PgJ-je-VAR" secondAttribute="top" constant="12" id="Cua-eK-dMa"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mjk-WW-SQt" secondAttribute="trailing" constant="10" id="JGw-Cl-awR"/>
+                                                <constraint firstItem="lpv-6a-bqs" firstAttribute="top" secondItem="PgJ-je-VAR" secondAttribute="top" id="QNz-Ja-T1Z"/>
+                                                <constraint firstItem="lpv-6a-bqs" firstAttribute="leading" secondItem="PgJ-je-VAR" secondAttribute="leading" id="vg8-Sc-ZQs"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodKindImageView" destination="lpv-6a-bqs" id="cbb-WS-3aK"/>
+                                            <outlet property="foodKindLabel" destination="Mjk-WW-SQt" id="gry-nQ-4Sn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="wX0-lM-hFP" kind="show" id="NOh-oz-d7f"/>
+                                    <outlet property="dataSource" destination="J8f-sM-CQ2" id="4DY-FK-pAf"/>
+                                    <outlet property="delegate" destination="J8f-sM-CQ2" id="1Su-qO-s0K"/>
                                 </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pkt-FK-JI6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NOK-x2-J8B" firstAttribute="centerY" secondItem="UdH-1F-LTw" secondAttribute="centerY" id="2Cc-87-hYa"/>
-                            <constraint firstItem="NOK-x2-J8B" firstAttribute="centerX" secondItem="UdH-1F-LTw" secondAttribute="centerX" id="p2K-4Y-3XI"/>
+                            <constraint firstItem="JaG-M7-TLW" firstAttribute="leading" secondItem="Pkt-FK-JI6" secondAttribute="leading" id="BFy-wA-Fmi"/>
+                            <constraint firstItem="JaG-M7-TLW" firstAttribute="bottom" secondItem="Pkt-FK-JI6" secondAttribute="bottom" id="QRz-Od-1hb"/>
+                            <constraint firstItem="JaG-M7-TLW" firstAttribute="top" secondItem="Pkt-FK-JI6" secondAttribute="top" constant="8" id="dN2-If-IEn"/>
+                            <constraint firstItem="JaG-M7-TLW" firstAttribute="trailing" secondItem="Pkt-FK-JI6" secondAttribute="trailing" id="eYg-Vo-4D5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="co0-3l-KA2"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JaG-M7-TLW" id="Dtj-MK-Geg"/>
+                        <segue destination="wX0-lM-hFP" kind="show" identifier="toMenu" id="TcN-qS-U6W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DG5-HB-Uq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

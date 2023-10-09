@@ -7,10 +7,15 @@
 
 import Foundation
 
+protocol LocationManagerViewModelDelegate: AnyObject {
+    func didUpdateCity(city: String)
+}
+
 class LocationManagerViewModel {
     
     // MARK: - Properties
     
+    weak var delegate: LocationManagerViewModelDelegate?
     var city: String?
     var date: String {
         let currentDate = Date()
@@ -31,9 +36,11 @@ class LocationManagerViewModel {
 // MARK: Methods
 
 extension LocationManagerViewModel {
-    func fetchCityName(completion: @escaping (String?) -> Void) {
+    func fetchCityName() {
         locationProvider.fetchCityName { cityName in
-            completion(cityName)
+            let city = cityName ?? "Город не определен"
+            self.delegate?.didUpdateCity(city: city)
+            Logger.log("Город полученный во ViewModel: \(city)")
         }
     }
     

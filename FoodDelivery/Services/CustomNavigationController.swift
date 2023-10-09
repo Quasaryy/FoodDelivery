@@ -9,32 +9,47 @@ import UIKit
 
 class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
     
+    // MARK: - Properties
+    
+    private let locationViewModel = LocationManagerViewModel()
+    
     // MARK:  - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        locationViewModel.delegate = self
+        locationViewModel.fetchCityName()
     }
     
 }
 
 // MARK: - Methods
 
-extension CustomNavigationController {
+extension CustomNavigationController: LocationManagerViewModelDelegate {
+    
+    // MARK: LocationManagerViewModelDelegate
+    func didUpdateCity(city: String) {
+        locationViewModel.city = city
+        if let topVC = topViewController {
+            setupNavigationBar(for: topVC)
+        }
+    }
+
+    // MARK: UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        locationViewModel.delegate = self
         setupNavigationBar(for: viewController)
     }
     
+    // MARK: Setup
     private func setupNavigationBar(for viewController: UIViewController) {
-        
         let locationView = CustomNavigationView()
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         
-        let locationViewModel = LocationManagerViewModel()
-        locationViewModel.fetchCityName { cityName in
-            let city = cityName ?? "Город не определен"
-            let date = locationViewModel.date
-            locationView.configure(city: city, date: date)
-        }
+        let date = locationViewModel.date
+        locationView.configure(city: locationViewModel.city ?? "Город не определен", date: date)
         
         let locationBarItem = UIBarButtonItem(customView: locationView)
         viewController.navigationItem.leftBarButtonItem = locationBarItem
