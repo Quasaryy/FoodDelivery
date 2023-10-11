@@ -38,7 +38,7 @@ extension LocationManager {
         locationManager.startUpdatingLocation()
         
         // Задержка перед остановкой обновления местоположения
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30.0) {
             self.locationManager.stopUpdatingLocation()
         }
     }

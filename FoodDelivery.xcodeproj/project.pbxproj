@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22447EB2AD5A45000B3AC38 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */; };
+		D22447EE2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */; };
+		D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447EF2AD5A94F00B3AC38 /* Food.swift */; };
+		D22447F22AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */; };
+		D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */; };
 		D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */; };
 		D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */; };
 		D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37F2AD3EE65001C7303 /* Logger.swift */; };
 		D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613452AD3273000793F8F /* CustomNavigationView.swift */; };
-		D2A6134B2AD3345200793F8F /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6134A2AD3345200793F8F /* StartScreenViewModel.swift */; };
+		D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */; };
 		D2A6134D2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */; };
 		D2A6134F2AD34AA400793F8F /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A6134E2AD34AA400793F8F /* SF-Pro-Display-Regular.otf */; };
 		D2A613552AD3508800793F8F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613542AD3508800793F8F /* LocationManager.swift */; };
@@ -29,11 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		D22447EF2AD5A94F00B3AC38 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = "<group>"; };
 		D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D26DF37F2AD3EE65001C7303 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D2A613452AD3273000793F8F /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
-		D2A6134A2AD3345200793F8F /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		D2A6134E2AD34AA400793F8F /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D2A613542AD3508800793F8F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -63,6 +73,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D22447E92AD5A23000B3AC38 /* SecondScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */,
+				D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */,
+				D22447EC2AD5A61B00B3AC38 /* CustomCells */,
+			);
+			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		D22447EC2AD5A61B00B3AC38 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */,
+				D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		D233A8AA2AD41E6500692597 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D2C721432AD2FC5800B2C601 /* StartViewController.swift */,
-				D2A6134A2AD3345200793F8F /* StartScreenViewModel.swift */,
+				D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */,
 				D233A8AA2AD41E6500692597 /* CustomCells */,
 			);
 			path = StartScreen;
@@ -153,6 +182,7 @@
 				D2A613532AD3501000793F8F /* Services */,
 				D2E6636D2AD47A48005CCA62 /* Models */,
 				D2A613492AD333F200793F8F /* StartScreen */,
+				D22447E92AD5A23000B3AC38 /* SecondScreen */,
 				D2C721532AD2FC9F00B2C601 /* Layouts */,
 				D2A613482AD32DE200793F8F /* Resources */,
 				D2A613472AD32DC200793F8F /* Supporting Files */,
@@ -174,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */,
+				D22447EF2AD5A94F00B3AC38 /* Food.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,14 +285,19 @@
 				D2E6636A2AD47760005CCA62 /* NetworkManager.swift in Sources */,
 				D2C721442AD2FC5800B2C601 /* StartViewController.swift in Sources */,
 				D2A6135A2AD3616800793F8F /* LocationManagerViewModel.swift in Sources */,
+				D22447EB2AD5A45000B3AC38 /* SecondViewController.swift in Sources */,
 				D2C721402AD2FC5800B2C601 /* AppDelegate.swift in Sources */,
 				D2A613552AD3508800793F8F /* LocationManager.swift in Sources */,
 				D2C721422AD2FC5800B2C601 /* SceneDelegate.swift in Sources */,
 				D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */,
 				D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */,
 				D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */,
-				D2A6134B2AD3345200793F8F /* StartScreenViewModel.swift in Sources */,
+				D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */,
+				D22447F22AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift in Sources */,
+				D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */,
+				D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */,
 				D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */,
+				D22447EE2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift in Sources */,
 				D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */,
 				D2A613572AD3599D00793F8F /* CustomNavigationController.swift in Sources */,
 				D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */,
