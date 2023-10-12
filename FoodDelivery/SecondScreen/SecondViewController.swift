@@ -125,14 +125,20 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == horizontalCollectionView {
-            if let tag = viewModel.tag(at: indexPath.item) {
-                selectedTag = tag
-                selectedTagIndex = indexPath.item // Обновляем выбранный индекс
-                horizontalCollectionView.reloadData() // Перезагружаем, чтобы обновить цвета ячеек
-                verticalCollectionView.reloadData()
-            }
+        let currentType: CollectionViewType = (collectionView == horizontalCollectionView) ? .horizontal : .vertical
+        
+        switch currentType {
+            case .horizontal:
+                if let tag = viewModel.tag(at: indexPath.item) {
+                    selectedTag = tag
+                    selectedTagIndex = indexPath.item // Обновляем выбранный индекс
+                    horizontalCollectionView.reloadData() // Перезагружаем, чтобы обновить цвета ячеек
+                    verticalCollectionView.reloadData()
+                }
+            case .vertical:
+                ModalWindowManager.shared.presentModalWindow(from: self)
         }
     }
     
 }
+
