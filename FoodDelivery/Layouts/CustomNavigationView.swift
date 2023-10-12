@@ -73,4 +73,5 @@ extension CustomNavigationView {
         cityLabel.text = city
         dateLabel.text = date
     }
+    
 }

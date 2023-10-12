@@ -10,11 +10,13 @@ import Foundation
 enum Logger {
     
     // MARK: - Properties
+    
     static var isLoggingEnabled = true // Flag to enable/disable logging
     
 }
 
 // MARK: - Methods
+
 extension Logger {
     
     
@@ -43,4 +45,5 @@ extension Logger {
         
         print(message)
     }
+    
 }

@@ -12,6 +12,7 @@ protocol SecondViewModelProtocol {
     func dish(at index: Int) -> Dish?
     func numberOfTags() -> Int
     func numberOfDishes() -> Int
+    func filteredDishes(forTag tag: Teg) -> [Dish]
 }
 
 class SecondViewControllerViewModel: SecondViewModelProtocol {
@@ -51,6 +52,10 @@ extension SecondViewControllerViewModel {
     
     func numberOfDishes() -> Int {
         return dataModelForFood.dishes.count
+    }
+    
+    func filteredDishes(forTag tag: Teg) -> [Dish] {
+        return dataModelForFood.dishes.filter { $0.tegs.contains(tag) }
     }
     
 }

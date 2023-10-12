@@ -34,6 +34,7 @@
 		D2E6636A2AD47760005CCA62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E663692AD47760005CCA62 /* NetworkManager.swift */; };
 		D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */; };
 		D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E663702AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift */; };
+		D2EA76862AD81BE4000D1A60 /* CollectionViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EA76852AD81BE4000D1A60 /* CollectionViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		D2E663692AD47760005CCA62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
 		D2E663702AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D2EA76852AD81BE4000D1A60 /* CollectionViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */,
 				D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */,
+				D2EA76852AD81BE4000D1A60 /* CollectionViewType.swift */,
 				D22447EC2AD5A61B00B3AC38 /* CustomCells */,
 			);
 			path = SecondScreen;
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E6636A2AD47760005CCA62 /* NetworkManager.swift in Sources */,
+				D2EA76862AD81BE4000D1A60 /* CollectionViewType.swift in Sources */,
 				D2C721442AD2FC5800B2C601 /* StartViewController.swift in Sources */,
 				D2A6135A2AD3616800793F8F /* LocationManagerViewModel.swift in Sources */,
 				D22447EB2AD5A45000B3AC38 /* SecondViewController.swift in Sources */,

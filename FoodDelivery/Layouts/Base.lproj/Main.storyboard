@@ -153,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aIH-Jc-GdD">
-                                <rect key="frame" x="16" y="115" width="377" height="35"/>
+                                <rect key="frame" x="8" y="115" width="385" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="9Vs-8e-3U9"/>
@@ -264,7 +264,7 @@
                         <viewLayoutGuide key="safeArea" id="2RB-qF-TnY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aIH-Jc-GdD" firstAttribute="leading" secondItem="2RB-qF-TnY" secondAttribute="leading" constant="16" id="8jT-u0-ovQ"/>
+                            <constraint firstItem="aIH-Jc-GdD" firstAttribute="leading" secondItem="2RB-qF-TnY" secondAttribute="leading" constant="8" id="8jT-u0-ovQ"/>
                             <constraint firstItem="Y3e-pY-hSk" firstAttribute="leading" secondItem="3z9-Rr-MBT" secondAttribute="leading" constant="16" id="GE5-YK-NEO"/>
                             <constraint firstItem="Y3e-pY-hSk" firstAttribute="top" secondItem="aIH-Jc-GdD" secondAttribute="bottom" constant="16" id="dZA-Gk-jMm"/>
                             <constraint firstAttribute="trailing" secondItem="Y3e-pY-hSk" secondAttribute="trailing" constant="16" id="kxh-j0-Kfa"/>
