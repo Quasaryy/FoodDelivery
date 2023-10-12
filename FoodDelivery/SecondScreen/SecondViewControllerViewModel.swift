@@ -9,7 +9,9 @@ protocol SecondViewModelProtocol {
     var dataModelForFood: Food { get }
     func fetchData(completion: @escaping () -> Void)
     func tag(at index: Int) -> Teg?
+    func dish(at index: Int) -> Dish?
     func numberOfTags() -> Int
+    func numberOfDishes() -> Int
 }
 
 class SecondViewControllerViewModel: SecondViewModelProtocol {
@@ -32,11 +34,23 @@ extension SecondViewControllerViewModel {
     }
     
     func tag(at index: Int) -> Teg? {
+        guard index >= 0 && index < Teg.allCases.count else { return nil }
         return Teg.allCases[index]
     }
     
     func numberOfTags() -> Int {
         return Teg.allCases.count
+    }
+    
+    func dish(at index: Int) -> Dish? {
+        guard index >= 0 && index < dataModelForFood.dishes.count else {
+            return nil
+        }
+        return dataModelForFood.dishes[index]
+    }
+    
+    func numberOfDishes() -> Int {
+        return dataModelForFood.dishes.count
     }
     
 }

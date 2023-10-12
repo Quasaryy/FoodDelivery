@@ -5,14 +5,14 @@
 //  Created by Yury on 08.10.23.
 //
 
-protocol StartScreenViewModelProtocol {
+protocol StartViewControllerViewModelProtocol {
     var dataModelForCuisine: Cuisine { get }
     func fetchData(completion: @escaping () -> Void)
     func category(at index: Int) -> Сategory?
     func numberOfCategories() -> Int
 }
 
-class StartViewControllerViewModel: StartScreenViewModelProtocol {
+class StartViewControllerViewModel: StartViewControllerViewModelProtocol {
     
     // MARK: - Propertis
     

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D22447EB2AD5A45000B3AC38 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */; };
-		D22447EE2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */; };
+		D22447EE2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447ED2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift */; };
 		D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447EF2AD5A94F00B3AC38 /* Food.swift */; };
-		D22447F22AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */; };
+		D22447F22AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F12AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift */; };
 		D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */; };
 		D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */; };
 		D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */; };
@@ -22,6 +22,9 @@
 		D2A613552AD3508800793F8F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613542AD3508800793F8F /* LocationManager.swift */; };
 		D2A613572AD3599D00793F8F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613562AD3599D00793F8F /* CustomNavigationController.swift */; };
 		D2A6135A2AD3616800793F8F /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613592AD3616800793F8F /* LocationManagerViewModel.swift */; };
+		D2B647CB2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B647CA2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift */; };
+		D2B647CD2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B647CC2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift */; };
+		D2B9F2122AD734C7004E6CEC /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9F2112AD734C7004E6CEC /* ImageManager.swift */; };
 		D2C721402AD2FC5800B2C601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C7213F2AD2FC5800B2C601 /* AppDelegate.swift */; };
 		D2C721422AD2FC5800B2C601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C721412AD2FC5800B2C601 /* SceneDelegate.swift */; };
 		D2C721442AD2FC5800B2C601 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C721432AD2FC5800B2C601 /* StartViewController.swift */; };
@@ -35,9 +38,9 @@
 
 /* Begin PBXFileReference section */
 		D22447EA2AD5A45000B3AC38 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		D22447ED2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		D22447EF2AD5A94F00B3AC38 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D22447F12AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHorizontalCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = "<group>"; };
 		D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		D2A613542AD3508800793F8F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D2A613562AD3599D00793F8F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		D2A613592AD3616800793F8F /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
+		D2B647CA2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVerticalCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		D2B647CC2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVerticallCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2B9F2112AD734C7004E6CEC /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		D2C7213C2AD2FC5800B2C601 /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C7213F2AD2FC5800B2C601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C721412AD2FC5800B2C601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +92,8 @@
 		D22447EC2AD5A61B00B3AC38 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				D22447ED2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift */,
-				D22447F12AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift */,
+				D2B647CE2AD6EDEE0087A0DB /* VerticalCell */,
+				D2B647C92AD6ED9D0087A0DB /* HorizotalCell */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */,
 				D26DF37F2AD3EE65001C7303 /* Logger.swift */,
 				D2E663692AD47760005CCA62 /* NetworkManager.swift */,
+				D2B9F2112AD734C7004E6CEC /* ImageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -158,6 +165,24 @@
 				D2A613592AD3616800793F8F /* LocationManagerViewModel.swift */,
 			);
 			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		D2B647C92AD6ED9D0087A0DB /* HorizotalCell */ = {
+			isa = PBXGroup;
+			children = (
+				D22447ED2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift */,
+				D22447F12AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift */,
+			);
+			path = HorizotalCell;
+			sourceTree = "<group>";
+		};
+		D2B647CE2AD6EDEE0087A0DB /* VerticalCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2B647CC2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift */,
+				D2B647CA2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift */,
+			);
+			path = VerticalCell;
 			sourceTree = "<group>";
 		};
 		D2C721332AD2FC5800B2C601 = {
@@ -289,15 +314,18 @@
 				D2C721402AD2FC5800B2C601 /* AppDelegate.swift in Sources */,
 				D2A613552AD3508800793F8F /* LocationManager.swift in Sources */,
 				D2C721422AD2FC5800B2C601 /* SceneDelegate.swift in Sources */,
+				D2B647CD2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift in Sources */,
 				D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */,
+				D2B9F2122AD734C7004E6CEC /* ImageManager.swift in Sources */,
 				D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */,
 				D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */,
 				D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */,
-				D22447F22AD5AE4A00B3AC38 /* SecondCollectionViewCellViewModel.swift in Sources */,
+				D2B647CB2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift in Sources */,
+				D22447F22AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift in Sources */,
 				D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */,
 				D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */,
 				D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */,
-				D22447EE2AD5A63F00B3AC38 /* SecondCollectionViewCell.swift in Sources */,
+				D22447EE2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift in Sources */,
 				D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */,
 				D2A613572AD3599D00793F8F /* CustomNavigationController.swift in Sources */,
 				D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */,

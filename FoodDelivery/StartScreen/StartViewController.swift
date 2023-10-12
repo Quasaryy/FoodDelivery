@@ -15,7 +15,7 @@ class StartViewController: UIViewController {
     
     // MARK: - Properties
     
-    var viewModel: StartScreenViewModelProtocol = StartViewControllerViewModel()
+    var viewModel: StartViewControllerViewModelProtocol = StartViewControllerViewModel()
     let cellsInRow: CGFloat = 1
     let sectionInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     

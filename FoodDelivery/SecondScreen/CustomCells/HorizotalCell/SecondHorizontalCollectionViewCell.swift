@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondCollectionViewCell: UICollectionViewCell {
+class SecondHorizontalCollectionViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
@@ -17,7 +17,6 @@ class SecondCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
             super.awakeFromNib()
-            
             layer.cornerRadius = 10
             clipsToBounds = true
         }
@@ -26,8 +25,9 @@ class SecondCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 
-extension SecondCollectionViewCell {
-    func configure(with viewModel: SecondCollectionViewCellViewModel) {
+extension SecondHorizontalCollectionViewCell {
+    func configure(with viewModel: SecondHorizontalCollectionViewCellViewModel) {
         foodTag.text = viewModel.tagName
     }
+    
 }

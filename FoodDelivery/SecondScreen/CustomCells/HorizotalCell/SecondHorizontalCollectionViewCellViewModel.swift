@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SecondCollectionViewCellViewModel {
+class SecondHorizontalCollectionViewCellViewModel {
     let tag: Teg
     
     init(tag: Teg) {
