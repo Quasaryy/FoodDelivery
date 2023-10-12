@@ -28,7 +28,7 @@ extension ModalWindowManager {
         guard let tabBarController = parentViewController.tabBarController else { return }
         
         let dimmingView = UIView(frame: tabBarController.view.bounds)
-        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         dimmingView.tag = 1234 // Чтобы потом можно было легко найти и удалить
         
         tabBarController.view.addSubview(dimmingView)
@@ -42,13 +42,14 @@ extension ModalWindowManager {
         ])
         
         // Отображение модального окна
+        // Отображение модального окна
         if let modalView = ModalViewClass.instantiateFromNib() {
             modalView.translatesAutoresizingMaskIntoConstraints = false
             tabBarController.view.addSubview(modalView)
             
             NSLayoutConstraint.activate([
-                modalView.widthAnchor.constraint(equalToConstant: 300),
-                modalView.heightAnchor.constraint(equalToConstant: 400),
+                modalView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor, constant: 24), // Отступ слева
+                modalView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor, constant: -24), // Отступ справа
                 modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
                 modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
             ])
