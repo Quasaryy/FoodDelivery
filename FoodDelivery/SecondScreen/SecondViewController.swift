@@ -136,9 +136,19 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelega
                     verticalCollectionView.reloadData()
                 }
             case .vertical:
-                ModalWindowManager.shared.presentModalWindow(from: self)
-        }
-    }
+                        if let selectedDish = viewModel.dish(at: indexPath.item) {
+                            // Здесь инициализируем менеджер бейджей и назначаем его модальному представлению
+                            let modalView = ModalWindowManager.shared.presentModalWindow(from: self, dish: selectedDish)
+                            modalView?.badgeManager = TabBarBadgeManager(tabBarController: tabBarController)
+                            
+                            // Здесь устанавливаем обработчик для изменения статуса избранного
+                            modalView?.viewModel?.onFavoriteStatusChanged = { [weak self] newFavoriteStatus in
+                                self?.viewModel.updateFavoriteStatus(forDishId: selectedDish.id, isFavorite: newFavoriteStatus)
+                            }
+                            modalView?.parentTabBarController = tabBarController
+                        }
+                }
+            }
     
 }
 

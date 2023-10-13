@@ -13,6 +13,7 @@ protocol SecondViewModelProtocol {
     func numberOfTags() -> Int
     func numberOfDishes() -> Int
     func filteredDishes(forTag tag: Teg) -> [Dish]
+    func updateFavoriteStatus(forDishId id: Int, isFavorite: Bool)
 }
 
 class SecondViewControllerViewModel: SecondViewModelProtocol {
@@ -20,7 +21,7 @@ class SecondViewControllerViewModel: SecondViewModelProtocol {
     // MARK: - Propertis
     
     var dataModelForFood = Food(dishes: [Dish]())
-    let api = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
+    private let api = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
     
 }
 
@@ -56,6 +57,12 @@ extension SecondViewControllerViewModel {
     
     func filteredDishes(forTag tag: Teg) -> [Dish] {
         return dataModelForFood.dishes.filter { $0.tegs.contains(tag) }
+    }
+    
+    func updateFavoriteStatus(forDishId id: Int, isFavorite: Bool) {
+        if let index = dataModelForFood.dishes.firstIndex(where: { $0.id == id }) {
+            dataModelForFood.dishes[index].isFavorite = isFavorite
+        }
     }
     
 }

@@ -7,7 +7,7 @@
 
 // MARK: - Food
 struct Food: Codable {
-    let dishes: [Dish]
+    var dishes: [Dish]
 }
 
 // MARK: - Dish
@@ -18,6 +18,7 @@ struct Dish: Codable {
     let description: String
     let imageURL: String
     let tegs: [Teg]
+    var isFavorite: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case id, name, price, weight, description

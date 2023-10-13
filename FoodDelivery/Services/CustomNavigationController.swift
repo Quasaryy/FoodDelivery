@@ -71,7 +71,8 @@ extension CustomNavigationController: LocationManagerViewModelDelegate {
         }
     }
     
-    @objc func backButtonTapped() {
+    @objc 
+    func backButtonTapped() {
         popViewController(animated: true)
     }
     

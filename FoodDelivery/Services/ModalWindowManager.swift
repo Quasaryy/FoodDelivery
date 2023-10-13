@@ -22,10 +22,10 @@ class ModalWindowManager {
 // MARK: - Methods
 
 extension ModalWindowManager {
-    func presentModalWindow(from parentViewController: UIViewController) {
+    func presentModalWindow(from parentViewController: UIViewController, dish: Dish) -> ModalViewClass? {
         
         // Затемнение
-        guard let tabBarController = parentViewController.tabBarController else { return }
+        guard let tabBarController = parentViewController.tabBarController else { return nil }
         
         let dimmingView = UIView(frame: tabBarController.view.bounds)
         dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
@@ -42,8 +42,9 @@ extension ModalWindowManager {
         ])
         
         // Отображение модального окна
-        // Отображение модального окна
         if let modalView = ModalViewClass.instantiateFromNib() {
+                let viewModel = ModalViewClassViewModel(dish: dish)
+                modalView.configure(with: viewModel)
             modalView.translatesAutoresizingMaskIntoConstraints = false
             tabBarController.view.addSubview(modalView)
             
@@ -53,7 +54,11 @@ extension ModalWindowManager {
                 modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
                 modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
             ])
+            
+            return modalView
         }
+        
+        return nil
     }
     
 }

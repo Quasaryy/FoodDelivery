@@ -43,4 +43,14 @@ extension ImageManager {
         }
     }
     
+    func getCachedImageData(from urlString: String) -> Data? {
+        guard let url = URL(string: urlString),
+              let cachedImage = imageCache.object(forKey: url.absoluteString as NSString)
+        else {
+            return nil
+        }
+        
+        return cachedImage.pngData()
+    }
+    
 }

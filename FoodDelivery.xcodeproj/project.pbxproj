@@ -13,11 +13,14 @@
 		D22447F22AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F12AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift */; };
 		D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */; };
 		D233A8A92AD41E5E00692597 /* StartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */; };
-		D257D6CB2AD83DF9006DEC56 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257D6CA2AD83DF9006DEC56 /* ModalViewController.swift */; };
 		D257D6D12AD8506F006DEC56 /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D257D6D02AD8506F006DEC56 /* ModalView.xib */; };
 		D257D6D32AD850B6006DEC56 /* ModalViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257D6D22AD850B6006DEC56 /* ModalViewClass.swift */; };
 		D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */; };
 		D26DF3802AD3EE65001C7303 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37F2AD3EE65001C7303 /* Logger.swift */; };
+		D28DB2A52AD943C400082BFE /* ModalViewClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2A42AD943C400082BFE /* ModalViewClassViewModel.swift */; };
+		D28DB2A72AD9851E00082BFE /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2A62AD9851E00082BFE /* CartItem.swift */; };
+		D28DB2A92AD9865A00082BFE /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2A82AD9865A00082BFE /* CartManager.swift */; };
+		D28DB2AB2AD99A8500082BFE /* TabBarBadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */; };
 		D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613452AD3273000793F8F /* CustomNavigationView.swift */; };
 		D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */; };
 		D2A6134D2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */; };
@@ -48,11 +51,14 @@
 		D22447F12AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHorizontalCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		D22447F32AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D233A8A82AD41E5E00692597 /* StartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCollectionViewCell.swift; sourceTree = "<group>"; };
-		D257D6CA2AD83DF9006DEC56 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		D257D6D02AD8506F006DEC56 /* ModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
 		D257D6D22AD850B6006DEC56 /* ModalViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewClass.swift; sourceTree = "<group>"; };
 		D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D26DF37F2AD3EE65001C7303 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D28DB2A42AD943C400082BFE /* ModalViewClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewClassViewModel.swift; sourceTree = "<group>"; };
+		D28DB2A62AD9851E00082BFE /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		D28DB2A82AD9865A00082BFE /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBadgeManager.swift; sourceTree = "<group>"; };
 		D2A613452AD3273000793F8F /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -119,14 +125,6 @@
 			path = CustomCells;
 			sourceTree = "<group>";
 		};
-		D257D6C92AD83DCA006DEC56 /* ModalScreen */ = {
-			isa = PBXGroup;
-			children = (
-				D257D6CA2AD83DF9006DEC56 /* ModalViewController.swift */,
-			);
-			path = ModalScreen;
-			sourceTree = "<group>";
-		};
 		D2A613472AD32DC200793F8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +173,8 @@
 				D2E663692AD47760005CCA62 /* NetworkManager.swift */,
 				D2B9F2112AD734C7004E6CEC /* ImageManager.swift */,
 				D2B579D62AD869E4006F54E9 /* ModalWindowManager.swift */,
+				D28DB2A82AD9865A00082BFE /* CartManager.swift */,
+				D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,6 +193,7 @@
 			children = (
 				D257D6D02AD8506F006DEC56 /* ModalView.xib */,
 				D257D6D22AD850B6006DEC56 /* ModalViewClass.swift */,
+				D28DB2A42AD943C400082BFE /* ModalViewClassViewModel.swift */,
 			);
 			path = ModalWindow;
 			sourceTree = "<group>";
@@ -238,7 +239,6 @@
 				D2E6636D2AD47A48005CCA62 /* Models */,
 				D2A613492AD333F200793F8F /* StartScreen */,
 				D22447E92AD5A23000B3AC38 /* SecondScreen */,
-				D257D6C92AD83DCA006DEC56 /* ModalScreen */,
 				D2C721532AD2FC9F00B2C601 /* Layouts */,
 				D2A613482AD32DE200793F8F /* Resources */,
 				D2A613472AD32DC200793F8F /* Supporting Files */,
@@ -261,6 +261,7 @@
 			children = (
 				D2E6636E2AD47A8D005CCA62 /* Cuisine.swift */,
 				D22447EF2AD5A94F00B3AC38 /* Food.swift */,
+				D28DB2A62AD9851E00082BFE /* CartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,7 +349,9 @@
 				D2A613552AD3508800793F8F /* LocationManager.swift in Sources */,
 				D2C721422AD2FC5800B2C601 /* SceneDelegate.swift in Sources */,
 				D2B647CD2AD6EDE60087A0DB /* SecondVerticallCollectionViewCell.swift in Sources */,
+				D28DB2A92AD9865A00082BFE /* CartManager.swift in Sources */,
 				D2B579D72AD869E4006F54E9 /* ModalWindowManager.swift in Sources */,
+				D28DB2A72AD9851E00082BFE /* CartItem.swift in Sources */,
 				D2E663712AD49D5C005CCA62 /* StartCollectionViewCellViewModel.swift in Sources */,
 				D2B9F2122AD734C7004E6CEC /* ImageManager.swift in Sources */,
 				D257D6D32AD850B6006DEC56 /* ModalViewClass.swift in Sources */,
@@ -357,11 +360,12 @@
 				D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */,
 				D2B647CB2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift in Sources */,
 				D22447F22AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift in Sources */,
-				D257D6CB2AD83DF9006DEC56 /* ModalViewController.swift in Sources */,
+				D28DB2A52AD943C400082BFE /* ModalViewClassViewModel.swift in Sources */,
 				D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */,
 				D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */,
 				D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */,
 				D22447EE2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift in Sources */,
+				D28DB2AB2AD99A8500082BFE /* TabBarBadgeManager.swift in Sources */,
 				D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */,
 				D2A613572AD3599D00793F8F /* CustomNavigationController.swift in Sources */,
 				D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */,

@@ -28,7 +28,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWx-0s-AKb">
                             <rect key="frame" x="10" y="10" width="295" height="212"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P0-V0-akr" userLabel="Button Close">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P0-V0-akr" userLabel="Button Close">
                             <rect key="frame" x="267" y="8" width="40" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -39,8 +39,11 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="xmark" catalog="system"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="TwG-i4-Vyx"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-m4-mLf" userLabel="Button Favorite">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-m4-mLf" userLabel="Button Favorite">
                             <rect key="frame" x="219" y="8" width="40" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -51,6 +54,9 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="suit.heart" catalog="system"/>
+                            <connections>
+                                <action selector="heartButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2wN-4D-zu6"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,13 +79,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piM-MD-Ri5">
-                    <rect key="frame" x="16" y="283.33333333333331" width="30" height="44.666666666666686"/>
+                    <rect key="frame" x="16" y="283.33333333333331" width="29.666666666666671" height="44.666666666666686"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV8-0J-hXy">
-                    <rect key="frame" x="48" y="283.33333333333331" width="24" height="44.666666666666686"/>
+                    <rect key="frame" x="47.666666666666664" y="283.33333333333331" width="23.999999999999993" height="44.666666666666686"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -90,16 +96,24 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsS-uI-nnt">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsS-uI-nnt">
                     <rect key="frame" x="16" y="369" width="315" height="48"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="fzR-sa-S6Y"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Добавить в корзину">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <buttonConfiguration key="configuration" style="plain" title="Добавить в корзину">
+                        <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="addToCartButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="3Zc-Z5-jgL"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -126,6 +140,17 @@
                 <constraint firstItem="AV8-0J-hXy" firstAttribute="leading" secondItem="piM-MD-Ri5" secondAttribute="trailing" constant="2" id="zWY-w8-Tsb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addToCartButton" destination="wsS-uI-nnt" id="rx0-qH-O6H"/>
+                <outlet property="closeButton" destination="9P0-V0-akr" id="1hs-de-o41"/>
+                <outlet property="foodDescriptionLabel" destination="JZR-11-W6l" id="b0K-Se-znL"/>
+                <outlet property="foodImageView" destination="wWx-0s-AKb" id="cdW-Bo-Dyr"/>
+                <outlet property="foodNameLabel" destination="ga5-hY-Vf8" id="9lV-ff-qxT"/>
+                <outlet property="heartButton" destination="BB0-m4-mLf" id="kcb-Oz-yzR"/>
+                <outlet property="priceLabel" destination="piM-MD-Ri5" id="veV-f7-skM"/>
+                <outlet property="viewWithImage" destination="rfK-bM-ebL" id="qin-Tq-rRJ"/>
+                <outlet property="weightLable" destination="AV8-0J-hXy" id="Jwz-9i-Fjc"/>
+            </connections>
             <point key="canvasLocation" x="46.564885496183201" y="-134.1549295774648"/>
         </view>
     </objects>
