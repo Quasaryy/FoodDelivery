@@ -37,8 +37,10 @@ class ModalViewClass: UIView {
     // MARK: - IBAcitons
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        self.removeFromSuperview()
-        removeDimmingEffect()
+        AnimationManager.shared.animateModalViewDisappearance(self) {
+            self.removeFromSuperview()
+            self.removeDimmingEffect()
+        }
     }
     
     @IBAction func heartButtonTapped(_ sender: UIButton) {
@@ -83,7 +85,7 @@ extension ModalViewClass {
             self?.updateCartBadge()
         }
     }
-
+    
     
     func removeDimmingEffect() {
         guard let tabBarView = self.parentTabBarController?.view else { return }
@@ -91,7 +93,7 @@ extension ModalViewClass {
             dimmingView.removeFromSuperview()
         }
     }
-
+    
     func updateHeartButtonAppearance() {
         guard let viewModel = viewModel else { return }
         heartButton.setImage(UIImage(systemName: viewModel.isFavorite ? "suit.heart.fill" : "suit.heart"), for: .normal)
@@ -99,8 +101,8 @@ extension ModalViewClass {
     }
     
     func updateCartBadge() {
-            let itemCount = CartManager.shared.totalItemsCount()
-            badgeManager?.updateCartBadge(with: itemCount)
-        }
-
+        let itemCount = CartManager.shared.totalItemsCount()
+        badgeManager?.updateCartBadge(with: itemCount)
+    }
+    
 }

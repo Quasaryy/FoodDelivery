@@ -21,6 +21,7 @@
 		D28DB2A72AD9851E00082BFE /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2A62AD9851E00082BFE /* CartItem.swift */; };
 		D28DB2A92AD9865A00082BFE /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2A82AD9865A00082BFE /* CartManager.swift */; };
 		D28DB2AB2AD99A8500082BFE /* TabBarBadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */; };
+		D28DB2AD2AD9B3DD00082BFE /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DB2AC2AD9B3DD00082BFE /* AnimationManager.swift */; };
 		D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A613452AD3273000793F8F /* CustomNavigationView.swift */; };
 		D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */; };
 		D2A6134D2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */; };
@@ -59,6 +60,7 @@
 		D28DB2A62AD9851E00082BFE /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		D28DB2A82AD9865A00082BFE /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBadgeManager.swift; sourceTree = "<group>"; };
+		D28DB2AC2AD9B3DD00082BFE /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		D2A613452AD3273000793F8F /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		D2A6134A2AD3345200793F8F /* StartViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerViewModel.swift; sourceTree = "<group>"; };
 		D2A6134C2AD34A6E00793F8F /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				D2B579D62AD869E4006F54E9 /* ModalWindowManager.swift */,
 				D28DB2A82AD9865A00082BFE /* CartManager.swift */,
 				D28DB2AA2AD99A8500082BFE /* TabBarBadgeManager.swift */,
+				D28DB2AC2AD9B3DD00082BFE /* AnimationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				D22447F42AD5AE5B00B3AC38 /* SecondViewControllerViewModel.swift in Sources */,
 				D22447F02AD5A94F00B3AC38 /* Food.swift in Sources */,
 				D2E6636F2AD47A8D005CCA62 /* Cuisine.swift in Sources */,
+				D28DB2AD2AD9B3DD00082BFE /* AnimationManager.swift in Sources */,
 				D22447EE2AD5A63F00B3AC38 /* SecondHorizontalCollectionViewCell.swift in Sources */,
 				D28DB2AB2AD99A8500082BFE /* TabBarBadgeManager.swift in Sources */,
 				D2A613462AD3273000793F8F /* CustomNavigationView.swift in Sources */,

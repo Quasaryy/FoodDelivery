@@ -42,23 +42,23 @@ extension ModalWindowManager {
         ])
         
         // Отображение модального окна
-        if let modalView = ModalViewClass.instantiateFromNib() {
+            if let modalView = ModalViewClass.instantiateFromNib() {
                 let viewModel = ModalViewClassViewModel(dish: dish)
                 modalView.configure(with: viewModel)
-            modalView.translatesAutoresizingMaskIntoConstraints = false
-            tabBarController.view.addSubview(modalView)
-            
-            NSLayoutConstraint.activate([
-                modalView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor, constant: 24), // Отступ слева
-                modalView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor, constant: -24), // Отступ справа
-                modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
-                modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
-            ])
-            
-            return modalView
+                modalView.translatesAutoresizingMaskIntoConstraints = false
+                modalView.alpha = 0.0
+                modalView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                tabBarController.view.addSubview(modalView)
+                NSLayoutConstraint.activate([
+                    modalView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor, constant: 24),
+                    modalView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor, constant: -24),
+                    modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
+                    modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
+                ])
+                AnimationManager.shared.animateModalViewAppearance(for: modalView)
+                return modalView
+            }
+            return nil
         }
-        
-        return nil
-    }
     
 }
