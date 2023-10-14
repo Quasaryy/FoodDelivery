@@ -18,7 +18,6 @@ class SecondHorizontalCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
             super.awakeFromNib()
             layer.cornerRadius = 10
-            clipsToBounds = true
         }
     
 }
