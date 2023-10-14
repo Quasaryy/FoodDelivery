@@ -95,14 +95,10 @@ class CustomStepper: UIStepper {
     }
     
     @objc private func handleButtonDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-        })
+        AnimationManager.shared.animateButtonDown(sender)
     }
 
     @objc private func handleButtonUp(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
-            sender.transform = CGAffineTransform.identity
-        })
+        AnimationManager.shared.animateButtonUp(sender)
     }
 }

@@ -14,6 +14,8 @@ protocol SecondViewModelProtocol {
     func numberOfDishes() -> Int
     func filteredDishes(forTag tag: Teg) -> [Dish]
     func updateFavoriteStatus(forDishId id: Int, isFavorite: Bool)
+    func getCategoryName() -> String
+    func setCategoryName(_ name: String)
 }
 
 class SecondViewControllerViewModel: SecondViewModelProtocol {
@@ -22,12 +24,21 @@ class SecondViewControllerViewModel: SecondViewModelProtocol {
     
     var dataModelForFood = Food(dishes: [Dish]())
     private let api = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
+    private var categoryName: String = ""
     
 }
 
 // MARK: - Methods
 
 extension SecondViewControllerViewModel {
+    func getCategoryName() -> String {
+            return categoryName
+        }
+    
+    func setCategoryName(_ name: String) {
+            self.categoryName = name
+        }
+    
     func fetchData(completion: @escaping () -> Void) {
         NetworkManager.shared.fetchData(urlString: api) { [weak self] dataModel in
             self?.dataModelForFood = dataModel

@@ -29,6 +29,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = viewModel.getCategoryName()
         viewModel.fetchData {
             self.horizontalCollectionView.reloadData()
             self.verticalCollectionView.reloadData()

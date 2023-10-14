@@ -69,7 +69,19 @@ extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toMenu", sender: nil)
+        let selectedCategory = viewModel.category(at: indexPath.row)
+        performSegue(withIdentifier: "toMenu", sender: selectedCategory)
     }
     
+}
+
+// MARK: - Navigation
+extension StartViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMenu",
+           let destination = segue.destination as? SecondViewController,
+           let selectedCategory = sender as? Сategory {
+            destination.viewModel.setCategoryName(selectedCategory.name)
+        }
+    }
 }
