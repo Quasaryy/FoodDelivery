@@ -75,7 +75,7 @@ extension ModalViewClassViewModel {
     }
     
     func addItemToCart() {
-            let cartItem = CartItem(dish: self.dish, quantity: 1)
+        let cartItem = CartItem(dish: self.dish, name: self.dish.name, quantity: 1, totalSum: self.dish.price)
             CartManager.shared.addItem(cartItem)
             onUpdateCartBadge?()
         }

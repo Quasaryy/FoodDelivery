@@ -23,6 +23,7 @@ extension CartManager {
         if let index = items.firstIndex(where: { $0.dish.id == item.dish.id }) {
             // Если продукт уже есть в корзине, увеличиваем его количество
             items[index].quantity += item.quantity
+            items[index].totalSum += item.totalSum
         } else {
             // Иначе добавляем новый элемент
             items.append(item)

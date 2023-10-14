@@ -7,5 +7,7 @@
 
 struct CartItem {
     let dish: Dish
+    let name: String
     var quantity: Int
+    var totalSum: Int
 }
