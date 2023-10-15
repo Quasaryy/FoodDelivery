@@ -16,7 +16,7 @@ protocol CustomizableTabBar {
 }
 
 // Константы для CustomTabBarController
-private struct Constants {
+private enum Constants {
     static let tabBarBackgroundColor: UIColor = .white
     static let tabBarHeight: CGFloat = 88
     static let yOffset: CGFloat = 3
@@ -55,7 +55,8 @@ extension CustomTabBarController {
     
     // Позиционирует элементы таб-бара
     private func adjustTabBarItemsPosition() {
-        for item in tabBar.items! {
+        guard let tabBarItems = tabBar.items else { return }
+        for item in tabBarItems {
             item.imageInsets = UIEdgeInsets(top: Constants.yOffset, left: 0, bottom: -Constants.yOffset, right: 0)
         }
     }

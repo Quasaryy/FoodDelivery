@@ -28,7 +28,7 @@ extension ImageManager {
     
     // Метод для загрузки изображения из URL и отображения его в UIImageView
     func loadImage(from url: URL?, into imageView: UIImageView) {
-        guard let url = url else { return }
+        guard let url else { return }
         
         // Проверяем, есть ли изображение в кэше
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {

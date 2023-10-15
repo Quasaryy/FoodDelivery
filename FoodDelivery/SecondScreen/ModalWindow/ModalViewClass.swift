@@ -97,7 +97,7 @@ extension ModalViewClass {
     
     // Обновление внешнего вида кнопки "Избранное"
     func updateHeartButtonAppearance() {
-        guard let viewModel = viewModel else { return }
+        guard let viewModel else { return }
         heartButton.setImage(UIImage(systemName: viewModel.isFavorite ? "suit.heart.fill" : "suit.heart"), for: .normal)
         heartButton.tintColor = viewModel.isFavorite ? .red : .black
     }
