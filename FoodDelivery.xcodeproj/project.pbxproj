@@ -20,6 +20,7 @@
 		D24C13BB2ADB0E8300143E68 /* CartTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C13BA2ADB0E8300143E68 /* CartTableViewCellViewModel.swift */; };
 		D24C13BD2ADB19A600143E68 /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C13BC2ADB19A600143E68 /* UtilityManager.swift */; };
 		D24C13C02ADB623500143E68 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C13BF2ADB623500143E68 /* FinalViewController.swift */; };
+		D24C13C52ADBFD7700143E68 /* CustomTabBarControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C13C42ADBFD7700143E68 /* CustomTabBarControllerViewModel.swift */; };
 		D257D6D12AD8506F006DEC56 /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D257D6D02AD8506F006DEC56 /* ModalView.xib */; };
 		D257D6D32AD850B6006DEC56 /* ModalViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257D6D22AD850B6006DEC56 /* ModalViewClass.swift */; };
 		D26DF37E2AD3EBBE001C7303 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */; };
@@ -66,6 +67,7 @@
 		D24C13BA2ADB0E8300143E68 /* CartTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		D24C13BC2ADB19A600143E68 /* UtilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
 		D24C13BF2ADB623500143E68 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		D24C13C42ADBFD7700143E68 /* CustomTabBarControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewModel.swift; sourceTree = "<group>"; };
 		D257D6D02AD8506F006DEC56 /* ModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
 		D257D6D22AD850B6006DEC56 /* ModalViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewClass.swift; sourceTree = "<group>"; };
 		D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,15 @@
 			path = FinalScreen;
 			sourceTree = "<group>";
 		};
+		D24C13C62ADBFD7E00143E68 /* CustomTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */,
+				D24C13C42ADBFD7700143E68 /* CustomTabBarControllerViewModel.swift */,
+			);
+			path = CustomTabBarController;
+			sourceTree = "<group>";
+		};
 		D2A613472AD32DC200793F8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +222,7 @@
 			children = (
 				D2A613582AD3613E00793F8F /* LocationManager */,
 				D2A613562AD3599D00793F8F /* CustomNavigationController.swift */,
-				D26DF37D2AD3EBBE001C7303 /* CustomTabBarController.swift */,
+				D24C13C62ADBFD7E00143E68 /* CustomTabBarController */,
 				D26DF37F2AD3EE65001C7303 /* Logger.swift */,
 				D2E663692AD47760005CCA62 /* NetworkManager.swift */,
 				D2B9F2112AD734C7004E6CEC /* ImageManager.swift */,
@@ -411,6 +422,7 @@
 				D24C13C02ADB623500143E68 /* FinalViewController.swift in Sources */,
 				D2A6134B2AD3345200793F8F /* StartViewControllerViewModel.swift in Sources */,
 				D2B647CB2AD6EDC10087A0DB /* SecondVerticalCollectionViewCellViewModel.swift in Sources */,
+				D24C13C52ADBFD7700143E68 /* CustomTabBarControllerViewModel.swift in Sources */,
 				D24C13BB2ADB0E8300143E68 /* CartTableViewCellViewModel.swift in Sources */,
 				D22447F22AD5AE4A00B3AC38 /* SecondHorizontalCollectionViewCellViewModel.swift in Sources */,
 				D28DB2A52AD943C400082BFE /* ModalViewClassViewModel.swift in Sources */,

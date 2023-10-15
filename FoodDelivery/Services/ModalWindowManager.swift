@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ModalWindowManaging {
+    func presentModalWindow(from parentViewController: UIViewController, dish: Dish) -> ModalViewClass?
+}
+
 class ModalWindowManager {
     
     // MARK: Properties

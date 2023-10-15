@@ -25,7 +25,7 @@ class SecondVerticallCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension SecondVerticallCollectionViewCell {
-    func configure(with viewModel: SecondVerticalCollectionViewCellViewModel) {
+    func configure(with viewModel: SecondVerticalCollectionViewCellViewModelProtocol) {
         foodNameLabel.text = viewModel.dishName
         ImageManager.shared.loadImage(from: URL(string: viewModel.dishImageUrl), into: foodImageView)
     }

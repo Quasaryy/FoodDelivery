@@ -7,6 +7,15 @@
 
 import Foundation
 
+protocol CartManaging {
+    func addItem(_ item: CartItem)
+    func removeItem(at index: Int)
+    func totalItemsCount() -> Int
+    func totalCartValue() -> Int
+    func updateQuantity(for dish: Dish, to newQuantity: Int)
+    func clearCart()
+}
+
 class CartManager {
     
     // MARK: - Properties

@@ -7,7 +7,12 @@
 
 import Foundation
 
-class SecondVerticalCollectionViewCellViewModel {
+protocol SecondVerticalCollectionViewCellViewModelProtocol {
+    var dishName: String { get }
+    var dishImageUrl: String { get }
+}
+
+class SecondVerticalCollectionViewCellViewModel: SecondVerticalCollectionViewCellViewModelProtocol  {
     
     // MARK: - Properties
     let dish: Dish

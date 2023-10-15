@@ -26,7 +26,9 @@ class CartViewController: UIViewController {
     // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         let totalValue = CartManager.shared.totalCartValue()
         paymentButton.setTitle("Оплатить \(UtilityManager.shared.formatNumber(totalValue) ?? "0") ₽", for: .normal)
         paymentButton.isEnabled = CartManager.shared.totalCartValue() > 0

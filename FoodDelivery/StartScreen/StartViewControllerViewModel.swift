@@ -8,14 +8,14 @@
 protocol StartViewControllerViewModelProtocol {
     var dataModelForCuisine: Cuisine { get }
     func fetchData(completion: @escaping () -> Void)
-    func category(at index: Int) -> Сategory?
+    func category(at index: Int) -> Category?
     func numberOfCategories() -> Int
 }
 
 class StartViewControllerViewModel: StartViewControllerViewModelProtocol {
     
     // MARK: - Propertis
-    var dataModelForCuisine = Cuisine(сategories: [Сategory]())
+    var dataModelForCuisine = Cuisine(сategories: [Category]())
     let api = "https://run.mocky.io/v3/058729bd-1402-4578-88de-265481fd7d54"
     
 }
@@ -29,7 +29,7 @@ extension StartViewControllerViewModel {
         }
     }
     
-    func category(at index: Int) -> Сategory? {
+    func category(at index: Int) -> Category? {
         if index >= 0 && index < dataModelForCuisine.сategories.count {
             return dataModelForCuisine.сategories[index]
         }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TabBarBadgeManaging {
+    func updateCartBadge(with itemCount: Int)
+}
+
 class TabBarBadgeManager {
     
     // MARK: - Propertis

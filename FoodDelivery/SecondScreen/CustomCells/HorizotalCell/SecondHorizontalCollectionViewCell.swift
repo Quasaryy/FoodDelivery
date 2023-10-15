@@ -22,7 +22,7 @@ class SecondHorizontalCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension SecondHorizontalCollectionViewCell {
-    func configure(with viewModel: SecondHorizontalCollectionViewCellViewModel) {
+    func configure(with viewModel: SecondHorizontalCollectionViewCellViewModelProtocol) {
         foodTag.text = viewModel.tagName
     }
     

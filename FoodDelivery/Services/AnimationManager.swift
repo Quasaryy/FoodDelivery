@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol Animating {
+    func animateModalViewDisappearance(_ modalView: UIView, completionActions: @escaping () -> Void)
+    func animateModalViewAppearance(for view: UIView, withDuration duration: TimeInterval)
+}
+
 class AnimationManager {
     
     // MARK: - Properties
     static let shared = AnimationManager()
+    private let defaultDuration: TimeInterval = 0.2
     
     // MARK: - init
     private init() { }
@@ -20,7 +26,7 @@ class AnimationManager {
 // MARK: - Methods
 extension AnimationManager {
     func animateModalViewDisappearance(_ modalView: UIView, completionActions: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: defaultDuration, animations: {
             modalView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             modalView.alpha = 0.0
         }) { _ in

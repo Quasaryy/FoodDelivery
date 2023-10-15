@@ -7,7 +7,11 @@
 
 import Foundation
 
-class SecondHorizontalCollectionViewCellViewModel {
+protocol SecondHorizontalCollectionViewCellViewModelProtocol {
+    var tagName: String { get }
+}
+
+class SecondHorizontalCollectionViewCellViewModel: SecondHorizontalCollectionViewCellViewModelProtocol {
     
     // MARK: - Propertis
     let tag: Teg

@@ -9,8 +9,15 @@ import Foundation
 
 class UtilityManager {
     
-    // MARK: - Propertis
+    // MARK: - Properties
     static let shared = UtilityManager()
+    
+    private let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     // MARK: - init
     private init() {}
@@ -20,10 +27,10 @@ class UtilityManager {
 // MARK: - Methods
 extension UtilityManager {
     func formatNumber(_ number: Int) -> String? {
-        let formatter = NumberFormatter()
-        formatter.groupingSeparator = " "
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: number))
+        objc_sync_enter(self)
+        let result = numberFormatter.string(from: NSNumber(value: number))
+        objc_sync_exit(self)
+        return result
     }
-    
 }
+

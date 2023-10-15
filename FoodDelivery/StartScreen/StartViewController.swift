@@ -75,7 +75,7 @@ extension StartViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMenu",
            let destination = segue.destination as? SecondViewController,
-           let selectedCategory = sender as? Сategory {
+           let selectedCategory = sender as? Category {
             destination.viewModel.setCategoryName(selectedCategory.name)
         }
     }

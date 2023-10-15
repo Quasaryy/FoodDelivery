@@ -11,6 +11,8 @@ class CustomStepper: UIStepper {
     
     // MARK: Properties
     private var customLabel: UILabel!
+    private let defaultFontName = "SFProDisplay-Medium"
+    private let defaultFontSize: CGFloat = 14
     
     override var value: Double {
         didSet {
@@ -36,7 +38,7 @@ extension CustomStepper {
     private func setup() {
         customLabel = UILabel()
         customLabel.textAlignment = .center
-        customLabel.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        customLabel.font = UIFont(name: defaultFontName, size: defaultFontSize)
         customLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(customLabel)
         
@@ -44,6 +46,8 @@ extension CustomStepper {
         
         setIncrementImage(UIImage(named: "StepperPlus"), for: .normal)
         setDecrementImage(UIImage(named: "StepperMinis"), for: .normal)
+        
+        addTarget(self, action: #selector(valueChanged), for: .valueChanged)
         
         setupConstraints()
     }
@@ -55,20 +59,9 @@ extension CustomStepper {
         ])
     }
     
-    @objc 
-    private func decrementValue() {
-        if value > minimumValue {
-            value -= stepValue
-            customLabel.text = "\(Int(value))"
-        }
-    }
-    
-    @objc 
-    private func incrementValue() {
-        if value < maximumValue {
-            value += stepValue
-            customLabel.text = "\(Int(value))"
-        }
+    @objc
+    private func valueChanged() {
+        customLabel.text = "\(Int(value))"
     }
     
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 class StartCollectionViewCellViewModel {
-    let category: Сategory
+    let category: Category
     
-    init(category: Сategory) {
+    init(category: Category) {
         self.category = category
     }
     

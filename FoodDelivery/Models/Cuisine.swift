@@ -7,11 +7,11 @@
 
 // MARK: - Cuisine
 struct Cuisine: Codable {
-    let сategories: [Сategory]
+    let сategories: [Category]
 }
 
 // MARK: - Сategory
-struct Сategory: Codable {
+struct Category: Codable {
     let id: Int
     let name: String
     let imageURL: String

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ImageManaging {
+    func loadImage(from url: URL?, into imageView: UIImageView)
+    func getCachedImageData(from urlString: String) -> Data?
+}
+
 class ImageManager {
     
     // MARK: - Properties
