@@ -5,7 +5,7 @@
 //  Created by Yury on 10.10.23.
 //
 
-protocol SecondViewModelProtocol {
+protocol SecondViewControllerViewModelProtocol {
     var dataModelForFood: Food { get }
     func fetchData(completion: @escaping () -> Void)
     func tag(at index: Int) -> Teg?
@@ -18,7 +18,7 @@ protocol SecondViewModelProtocol {
     func setCategoryName(_ name: String)
 }
 
-class SecondViewControllerViewModel: SecondViewModelProtocol {
+class SecondViewControllerViewModel: SecondViewControllerViewModelProtocol {
     
     // MARK: - Propertis
     

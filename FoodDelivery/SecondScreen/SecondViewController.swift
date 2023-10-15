@@ -18,7 +18,7 @@ class SecondViewController: UIViewController {
     
     let cellsInRow: CGFloat = 3
     let sectionInsets = UIEdgeInsets(top: 0, left: 8, bottom: 5, right: 8)
-    var viewModel: SecondViewModelProtocol = SecondViewControllerViewModel()
+    var viewModel: SecondViewControllerViewModelProtocol = SecondViewControllerViewModel()
     var selectedTag: Teg = .allMenu
     var selectedTagIndex: Int = 0
     let activeCell = UIColor(red: 51/255, green: 100/255, blue: 224/255, alpha: 1)

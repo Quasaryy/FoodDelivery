@@ -43,17 +43,4 @@ extension AnimationManager {
         })
     }
     
-    // MARK: Animation for custom stepper
-    func animateButtonDown(_ button: UIButton) {
-            UIView.animate(withDuration: 0.2, animations: {
-                button.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-            })
-        }
-
-        func animateButtonUp(_ button: UIButton) {
-            UIView.animate(withDuration: 0.2, animations: {
-                button.transform = CGAffineTransform.identity
-            })
-        }
-    
 }

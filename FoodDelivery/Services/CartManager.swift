@@ -13,7 +13,7 @@ class CartManager {
     
     static let shared = CartManager() // Создаем singleton
     var items: [CartItem] = [] // Массив элементов корзины
-
+    
 }
 
 // MARK: - Methods
@@ -31,8 +31,8 @@ extension CartManager {
     }
     
     // Метод для удаления элемента из корзины
-    func removeItem(_ item: CartItem) {
-        if let index = items.firstIndex(where: { $0.dish.id == item.dish.id }) {
+    func removeItem(at index: Int) {
+        if index >= 0 && index < items.count {
             items.remove(at: index)
         }
     }
@@ -41,4 +41,25 @@ extension CartManager {
     func totalItemsCount() -> Int {
         return items.reduce(0) { $0 + $1.quantity }
     }
+    
+    // Метод для вычисления общей стоимости товаров в корзине
+    func totalCartValue() -> Int {
+        return items.reduce(0) { $0 + $1.totalSum }
+    }
+    
+    // Метод для обновления количества товара
+    func updateQuantity(for dish: Dish, to newQuantity: Int) {
+        if let index = items.firstIndex(where: { $0.dish.id == dish.id }) {
+            // Устанавливаем новое количество
+            items[index].quantity = newQuantity
+            
+            // Пересчитываем общую стоимость товара
+            items[index].totalSum = newQuantity * dish.price
+        }
+    }
+    
+    func clearCart() {
+        items.removeAll()
+    }
+    
 }

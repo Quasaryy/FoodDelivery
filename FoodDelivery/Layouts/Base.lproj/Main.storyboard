@@ -113,6 +113,10 @@
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xqC-Qj-6Kp" customClass="CustomStepper" customModule="FoodDelivery" customModuleProvider="target">
                                                     <rect key="frame" x="267" y="34" width="94" height="32"/>
                                                     <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged:" destination="m3f-V7-IDD" eventType="valueChanged" id="tQz-yf-RKG"/>
+                                                    </connections>
                                                 </stepper>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mor-NU-SDx">
                                                     <rect key="frame" x="305" y="38" width="21" height="24"/>
@@ -160,6 +164,10 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.20000000000000001" green="0.39215686274509803" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="paymentButtonTapped:" destination="Ljg-EF-E7r" eventType="touchUpInside" id="9RW-eO-nA0"/>
+                                    <segue destination="3M8-Mh-bKi" kind="show" id="5x2-eL-I6D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3R6-QW-l56"/>
@@ -175,10 +183,68 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KZG-ar-Zp5"/>
+                    <connections>
+                        <outlet property="paymentButton" destination="aOp-lq-3ya" id="kDp-d4-GJP"/>
+                        <outlet property="tableView" destination="L2p-qf-B04" id="rRT-wK-pZX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5m-Pu-2aR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="919.84732824427476" y="1431.6901408450706"/>
+        </scene>
+        <!--Заказ принят-->
+        <scene sceneID="sWs-PT-y3F">
+            <objects>
+                <viewController id="3M8-Mh-bKi" customClass="FinalViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nSo-m7-NYV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш заказ принят в работу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-SZ-1Cg">
+                                <rect key="frame" x="66.666666666666686" y="338" width="260" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtT-OV-12W">
+                                <rect key="frame" x="148" y="194" width="97" height="108"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-pT-Uho">
+                                <rect key="frame" x="16" y="408.66666666666669" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="mKT-qS-aMn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Отлично!">
+                                    <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.20000000000000001" green="0.39215686274509803" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backToMainScreenButtonTapped:" destination="3M8-Mh-bKi" eventType="touchUpInside" id="aT4-KD-ehD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cl0-mv-L4d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k1h-SZ-1Cg" firstAttribute="centerY" secondItem="nSo-m7-NYV" secondAttribute="centerY" constant="-74.833333333333371" id="36T-ga-2ux"/>
+                            <constraint firstItem="cl0-mv-L4d" firstAttribute="trailing" secondItem="zGX-pT-Uho" secondAttribute="trailing" constant="16" id="QeP-Ck-Eew"/>
+                            <constraint firstItem="YtT-OV-12W" firstAttribute="top" secondItem="cl0-mv-L4d" secondAttribute="top" constant="91" id="QlS-dk-rOg"/>
+                            <constraint firstItem="zGX-pT-Uho" firstAttribute="top" secondItem="k1h-SZ-1Cg" secondAttribute="bottom" constant="44.329999999999998" id="ZEp-Jl-kL3"/>
+                            <constraint firstItem="zGX-pT-Uho" firstAttribute="leading" secondItem="cl0-mv-L4d" secondAttribute="leading" constant="16" id="rZR-ra-H7x"/>
+                            <constraint firstItem="k1h-SZ-1Cg" firstAttribute="centerX" secondItem="nSo-m7-NYV" secondAttribute="centerX" id="sA1-Od-Sic"/>
+                            <constraint firstItem="YtT-OV-12W" firstAttribute="centerX" secondItem="k1h-SZ-1Cg" secondAttribute="centerX" id="wMc-it-6oF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Заказ принят" id="VZr-zG-FfS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhH-x7-ztj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="2157"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="bOV-9b-US3">
