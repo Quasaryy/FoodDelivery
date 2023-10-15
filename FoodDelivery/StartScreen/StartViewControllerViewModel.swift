@@ -16,7 +16,7 @@ protocol StartViewControllerViewModelProtocol {
 class StartViewControllerViewModel: StartViewControllerViewModelProtocol {
     
     // MARK: - Propertis
-    var dataModelForCuisine = Cuisine(сategories: [Category]()) // Модель данных для кухни
+    var dataModelForCuisine = Cuisine(categories: [Category]()) // Модель данных для кухни
     let api = "https://run.mocky.io/v3/058729bd-1402-4578-88de-265481fd7d54" // URL для загрузки данных
     
 }
@@ -33,15 +33,15 @@ extension StartViewControllerViewModel {
     
     // Метод для получения категории по индексу
     func category(at index: Int) -> Category? {
-        if index >= 0 && index < dataModelForCuisine.сategories.count {
-            return dataModelForCuisine.сategories[index]
+        if index >= 0 && index < dataModelForCuisine.categories.count {
+            return dataModelForCuisine.categories[index]
         }
         return nil
     }
     
     // Метод для получения количества категорий
     func numberOfCategories() -> Int {
-        return dataModelForCuisine.сategories.count
+        return dataModelForCuisine.categories.count
     }
     
 }

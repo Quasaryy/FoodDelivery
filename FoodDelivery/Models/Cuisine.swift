@@ -7,7 +7,11 @@
 
 // MARK: - Cuisine
 struct Cuisine: Codable {
-    let сategories: [Category]
+    let categories: [Category]
+    
+    enum CodingKeys: String, CodingKey {
+        case categories = "сategories"
+    }
 }
 
 // MARK: - Сategory

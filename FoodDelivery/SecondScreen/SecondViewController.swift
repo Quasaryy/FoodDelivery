@@ -87,8 +87,7 @@ extension SecondViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == horizontalCollectionView {
-            if let tag = viewModel.tag(at: indexPath.item) {
+        if collectionView == horizontalCollectionView, let tag = viewModel.tag(at: indexPath.item) {
                 let cellViewModel = SecondHorizontalCollectionViewCellViewModel(tag: tag)
                 
                 // Вычисляем размер текста
@@ -99,7 +98,6 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelega
                 let widthWithPadding = size.width + padding
                 return CGSize(width: widthWithPadding, height: 35)
             }
-        }
         if collectionView == verticalCollectionView {
             let availableWidth = collectionView.frame.width // ширина экрана
             let cellSize: CGFloat = (availableWidth - sectionInsets.left * (cellsInRow + 1)) / cellsInRow
