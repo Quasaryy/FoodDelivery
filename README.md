@@ -62,4 +62,4 @@
 ![Иллюстрация к проекту](https://github.com/Quasaryy/FoodDelivery/blob/main/7.png)
 
 # Видео
-
+[![Watch the video](https://img.youtube.com/vi/gI5xDF9FC8I/maxresdefault.jpg)](https://youtu.be/gI5xDF9FC8I)
