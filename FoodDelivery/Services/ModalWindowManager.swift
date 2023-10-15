@@ -25,7 +25,7 @@ class ModalWindowManager {
 extension ModalWindowManager {
     func presentModalWindow(from parentViewController: UIViewController, dish: Dish) -> ModalViewClass? {
         
-        //MARK: Затемнение
+        // MARK: Затемнение
         
         // Проверяем, есть ли у родительского контроллера таб-бар
         guard let tabBarController = parentViewController.tabBarController else { return nil }

@@ -55,7 +55,7 @@ extension CustomStepper {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             customLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            customLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            customLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     

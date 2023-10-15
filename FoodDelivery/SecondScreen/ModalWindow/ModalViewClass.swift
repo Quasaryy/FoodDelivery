@@ -25,7 +25,6 @@ class ModalViewClass: UIView {
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var addToCartButton: UIButton!
     
-    
     // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
