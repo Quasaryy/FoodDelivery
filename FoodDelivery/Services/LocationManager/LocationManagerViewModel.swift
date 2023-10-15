@@ -14,7 +14,6 @@ protocol LocationManagerViewModelDelegate: AnyObject {
 class LocationManagerViewModel {
     
     // MARK: - Properties
-    
     weak var delegate: LocationManagerViewModelDelegate?
     var city: String?
     var date: String {
@@ -27,14 +26,12 @@ class LocationManagerViewModel {
     private let locationProvider: LocationProvider
     
     // MARK: - init
-    
     init(locationProvider: LocationProvider = LocationManager()) {
         self.locationProvider = locationProvider
     }
 }
 
 // MARK: Methods
-
 extension LocationManagerViewModel {
     func fetchCityName() {
         locationProvider.fetchCityName { cityName in

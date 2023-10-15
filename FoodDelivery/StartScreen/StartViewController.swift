@@ -10,18 +10,15 @@ import UIKit
 class StartViewController: UIViewController {
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    
     var viewModel: StartViewControllerViewModelProtocol = StartViewControllerViewModel()
     let cellsInRow: CGFloat = 1
     let sectionInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     
     
     // MARK: - viewDidLoad
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchData {
@@ -32,7 +29,6 @@ class StartViewController: UIViewController {
 }
 
 // MARK: - Methods
-
 extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfCategories()
@@ -51,7 +47,6 @@ extension StartViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     // MARK: Cell size
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let availableWidth = collectionView.frame.width
         let cellSize: CGFloat = (availableWidth - sectionInsets.left * (cellsInRow + 1)) / cellsInRow
@@ -84,4 +79,5 @@ extension StartViewController {
             destination.viewModel.setCategoryName(selectedCategory.name)
         }
     }
+    
 }

@@ -8,11 +8,9 @@
 import Foundation
 
 class SecondVerticalCollectionViewCellViewModel {
-    let dish: Dish
     
-    init(dish: Dish) {
-        self.dish = dish
-    }
+    // MARK: - Properties
+    let dish: Dish
     
     var dishName: String {
         return dish.name
@@ -20,6 +18,11 @@ class SecondVerticalCollectionViewCellViewModel {
     
     var dishImageUrl: String {
         return dish.imageURL
+    }
+    
+    // MARK: - init
+    init(dish: Dish) {
+        self.dish = dish
     }
     
 }

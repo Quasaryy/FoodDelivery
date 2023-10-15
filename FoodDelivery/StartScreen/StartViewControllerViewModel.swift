@@ -15,14 +15,12 @@ protocol StartViewControllerViewModelProtocol {
 class StartViewControllerViewModel: StartViewControllerViewModelProtocol {
     
     // MARK: - Propertis
-    
     var dataModelForCuisine = Cuisine(сategories: [Сategory]())
     let api = "https://run.mocky.io/v3/058729bd-1402-4578-88de-265481fd7d54"
     
 }
 
 // MARK: - Methods
-
 extension StartViewControllerViewModel {
     func fetchData(completion: @escaping () -> Void) {
         NetworkManager.shared.fetchData(urlString: api) { [weak self] dataModel in

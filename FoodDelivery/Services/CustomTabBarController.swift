@@ -10,7 +10,6 @@ import UIKit
 class CustomTabBarController: UITabBarController {
     
     // MARK: - viewDidLoad
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         alwaysWhiteTabBar()
@@ -19,7 +18,6 @@ class CustomTabBarController: UITabBarController {
     }
     
     // MARK: - viewDidLayoutSubviews
-    
     override func viewDidLayoutSubviews() {
         changeHieghtTabBar()
     }
@@ -27,7 +25,6 @@ class CustomTabBarController: UITabBarController {
 }
 
 // MARK: - Methods
-
 extension CustomTabBarController {
     private func alwaysWhiteTabBar() {
         tabBar.backgroundColor = .white

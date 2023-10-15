@@ -10,11 +10,9 @@ import UIKit
 class TabBarBadgeManager {
     
     // MARK: - Propertis
-    
     private weak var tabBarController: UITabBarController?
     
     // MARK: - init
-    
     init(tabBarController: UITabBarController?) {
         self.tabBarController = tabBarController
     }
@@ -22,7 +20,6 @@ class TabBarBadgeManager {
 }
 
 // MARK: - Methods
-
 extension TabBarBadgeManager {
     func updateCartBadge(with itemCount: Int) {
         let cartTabIndex = 2

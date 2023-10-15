@@ -14,13 +14,11 @@ protocol LocationProvider {
 class LocationManager: NSObject, CLLocationManagerDelegate, LocationProvider {
     
     // MARK: - Properties
-    
     private var locationManager = CLLocationManager()
     private var geocoder = CLGeocoder()
     private var completion: ((String?) -> Void)?
     
     // MARK: - init
-    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -31,7 +29,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate, LocationProvider {
 }
 
 // MARK: - Methods
-
 extension LocationManager {
     func fetchCityName(completion: @escaping (String?) -> Void) {
         self.completion = completion

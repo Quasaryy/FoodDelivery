@@ -14,12 +14,13 @@ struct Food: Codable {
 struct Dish: Codable {
     let id: Int
     let name: String
-    let price, weight: Int
+    let price: Int
+    let weight: Int
     let description: String
     let imageURL: String
     let tegs: [Teg]
     var isFavorite: Bool = false
-
+    
     enum CodingKeys: String, CodingKey {
         case id, name, price, weight, description
         case imageURL = "image_url"

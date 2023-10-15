@@ -10,12 +10,10 @@ import UIKit
 class SecondViewController: UIViewController {
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     @IBOutlet weak var verticalCollectionView: UICollectionView!
     
     // MARK: - Properties
-    
     let cellsInRow: CGFloat = 3
     let sectionInsets = UIEdgeInsets(top: 0, left: 8, bottom: 5, right: 8)
     var viewModel: SecondViewControllerViewModelProtocol = SecondViewControllerViewModel()
@@ -26,7 +24,6 @@ class SecondViewController: UIViewController {
     var currentCollectionViewType: CollectionViewType?
     
     // MARK: - viewDidLoad
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = viewModel.getCategoryName()
@@ -39,7 +36,6 @@ class SecondViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-
 extension SecondViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == horizontalCollectionView {
@@ -87,7 +83,6 @@ extension SecondViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-
 extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == horizontalCollectionView {
@@ -137,18 +132,18 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelega
                     verticalCollectionView.reloadData()
                 }
             case .vertical:
-                        if let selectedDish = viewModel.dish(at: indexPath.item) {
-                            // Здесь инициализируем менеджер бейджей и назначаем его модальному представлению
-                            let modalView = ModalWindowManager.shared.presentModalWindow(from: self, dish: selectedDish)
-                            modalView?.badgeManager = TabBarBadgeManager(tabBarController: tabBarController)
-                            
-                            // Здесь устанавливаем обработчик для изменения статуса избранного
-                            modalView?.viewModel?.onFavoriteStatusChanged = { [weak self] newFavoriteStatus in
-                                self?.viewModel.updateFavoriteStatus(forDishId: selectedDish.id, isFavorite: newFavoriteStatus)
-                            }
-                            modalView?.parentTabBarController = tabBarController
-                        }
+                if let selectedDish = viewModel.dish(at: indexPath.item) {
+                    // Здесь инициализируем менеджер бейджей и назначаем его модальному представлению
+                    let modalView = ModalWindowManager.shared.presentModalWindow(from: self, dish: selectedDish)
+                    modalView?.badgeManager = TabBarBadgeManager(tabBarController: tabBarController)
+                    
+                    // Здесь устанавливаем обработчик для изменения статуса избранного
+                    modalView?.viewModel?.onFavoriteStatusChanged = { [weak self] newFavoriteStatus in
+                        self?.viewModel.updateFavoriteStatus(forDishId: selectedDish.id, isFavorite: newFavoriteStatus)
+                    }
+                    modalView?.parentTabBarController = tabBarController
                 }
-            }
+        }
+    }
     
 }

@@ -10,17 +10,14 @@ import Foundation
 class NetworkManager {
     
     // MARK: - Properties
-    
     static let shared = NetworkManager()
     
     // MARK: - Init
-    
     private init() {}
     
 }
 
 // MARK: - Methods
-
 extension NetworkManager {
     func fetchData<T: Decodable>(urlString: String, completion: @escaping (T) -> Void
     ) {

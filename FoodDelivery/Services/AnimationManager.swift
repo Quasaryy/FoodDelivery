@@ -10,17 +10,14 @@ import UIKit
 class AnimationManager {
     
     // MARK: - Properties
-    
     static let shared = AnimationManager()
     
     // MARK: - init
-    
     private init() { }
     
 }
 
 // MARK: - Methods
-
 extension AnimationManager {
     func animateModalViewDisappearance(_ modalView: UIView, completionActions: @escaping () -> Void) {
         UIView.animate(withDuration: 0.2, animations: {

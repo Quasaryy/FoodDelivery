@@ -21,7 +21,6 @@ protocol SecondViewControllerViewModelProtocol {
 class SecondViewControllerViewModel: SecondViewControllerViewModelProtocol {
     
     // MARK: - Propertis
-    
     var dataModelForFood = Food(dishes: [Dish]())
     private let api = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
     private var categoryName: String = ""
@@ -29,15 +28,14 @@ class SecondViewControllerViewModel: SecondViewControllerViewModelProtocol {
 }
 
 // MARK: - Methods
-
 extension SecondViewControllerViewModel {
     func getCategoryName() -> String {
-            return categoryName
-        }
+        return categoryName
+    }
     
     func setCategoryName(_ name: String) {
-            self.categoryName = name
-        }
+        self.categoryName = name
+    }
     
     func fetchData(completion: @escaping () -> Void) {
         NetworkManager.shared.fetchData(urlString: api) { [weak self] dataModel in
@@ -77,4 +75,3 @@ extension SecondViewControllerViewModel {
     }
     
 }
-

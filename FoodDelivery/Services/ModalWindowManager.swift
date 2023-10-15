@@ -10,17 +10,14 @@ import UIKit
 class ModalWindowManager {
     
     // MARK: Properties
-    
     static let shared = ModalWindowManager()
     
     // MARK: init
-    
     private init() { }
     
 }
 
 // MARK: - Methods
-
 extension ModalWindowManager {
     func presentModalWindow(from parentViewController: UIViewController, dish: Dish) -> ModalViewClass? {
         
@@ -42,23 +39,23 @@ extension ModalWindowManager {
         ])
         
         // Отображение модального окна
-            if let modalView = ModalViewClass.instantiateFromNib() {
-                let viewModel = ModalViewClassViewModel(dish: dish)
-                modalView.configure(with: viewModel)
-                modalView.translatesAutoresizingMaskIntoConstraints = false
-                modalView.alpha = 0.0
-                modalView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                tabBarController.view.addSubview(modalView)
-                NSLayoutConstraint.activate([
-                    modalView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor, constant: 24),
-                    modalView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor, constant: -24),
-                    modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
-                    modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
-                ])
-                AnimationManager.shared.animateModalViewAppearance(for: modalView)
-                return modalView
-            }
-            return nil
+        if let modalView = ModalViewClass.instantiateFromNib() {
+            let viewModel = ModalViewClassViewModel(dish: dish)
+            modalView.configure(with: viewModel)
+            modalView.translatesAutoresizingMaskIntoConstraints = false
+            modalView.alpha = 0.0
+            modalView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            tabBarController.view.addSubview(modalView)
+            NSLayoutConstraint.activate([
+                modalView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor, constant: 24),
+                modalView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor, constant: -24),
+                modalView.centerXAnchor.constraint(equalTo: tabBarController.view.centerXAnchor),
+                modalView.centerYAnchor.constraint(equalTo: tabBarController.view.centerYAnchor)
+            ])
+            AnimationManager.shared.animateModalViewAppearance(for: modalView)
+            return modalView
         }
+        return nil
+    }
     
 }

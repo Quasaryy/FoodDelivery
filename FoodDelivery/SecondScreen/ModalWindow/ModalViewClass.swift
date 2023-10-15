@@ -10,13 +10,11 @@ import UIKit
 class ModalViewClass: UIView {
     
     // MARK: - Properties
-    
     var badgeManager: TabBarBadgeManager?
     var viewModel: ModalViewClassViewModelProtocol?
     var parentTabBarController: UITabBarController?
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var foodDescriptionLabel: UILabel!
@@ -35,7 +33,6 @@ class ModalViewClass: UIView {
     }
     
     // MARK: - IBAcitons
-    
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         AnimationManager.shared.animateModalViewDisappearance(self) {
             self.removeFromSuperview()
@@ -55,7 +52,6 @@ class ModalViewClass: UIView {
 }
 
 // MARK: - Methods
-
 extension ModalViewClass {
     class func instantiateFromNib() -> ModalViewClass? {
         return UINib(nibName: "ModalView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? ModalViewClass

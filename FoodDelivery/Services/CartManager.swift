@@ -10,7 +10,6 @@ import Foundation
 class CartManager {
     
     // MARK: - Properties
-    
     static let shared = CartManager() // Создаем singleton
     var items: [CartItem] = [] // Массив элементов корзины
     

@@ -10,7 +10,6 @@ import UIKit
 class CustomNavigationView: UIView {
     
     // MARK: - Properties
-    
     let locationImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Location"))
         imageView.contentMode = .scaleAspectFit
@@ -32,7 +31,6 @@ class CustomNavigationView: UIView {
     }()
     
     // MARK: - inits
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -67,7 +65,6 @@ class CustomNavigationView: UIView {
 }
 
 // MARK: - Methods
-
 extension CustomNavigationView {
     func configure(city: String, date: String) {
         cityLabel.text = city

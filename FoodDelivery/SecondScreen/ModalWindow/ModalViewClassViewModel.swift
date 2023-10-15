@@ -24,7 +24,6 @@ protocol ModalViewClassViewModelProtocol {
 class ModalViewClassViewModel: ModalViewClassViewModelProtocol {
     
     // MARK: - Properties
-    
     var dish: Dish
     
     var onUpdateCartBadge: (() -> Void)?
@@ -46,28 +45,28 @@ class ModalViewClassViewModel: ModalViewClassViewModelProtocol {
     }
     
     var imageData: Data? {
-            return ImageManager.shared.getCachedImageData(from: dish.imageURL)
-        }
+        return ImageManager.shared.getCachedImageData(from: dish.imageURL)
+    }
     
     var isFavorite: Bool {
-            get {
-                return dish.isFavorite
-            }
-            set {
-                dish.isFavorite = newValue
-            }
+        get {
+            return dish.isFavorite
         }
+        set {
+            dish.isFavorite = newValue
+        }
+    }
     
     var onFavoriteStatusChanged: ((Bool) -> Void)?
     
+    // MARK: - init
     init(dish: Dish) {
         self.dish = dish
     }
     
 }
 
-// MARK: Methods
-
+// MARK: - Methods
 extension ModalViewClassViewModel {
     func toggleFavorite() {
         dish.isFavorite.toggle()
@@ -76,8 +75,8 @@ extension ModalViewClassViewModel {
     
     func addItemToCart() {
         let cartItem = CartItem(dish: self.dish, name: self.dish.name, quantity: 1, totalSum: self.dish.price)
-            CartManager.shared.addItem(cartItem)
-            onUpdateCartBadge?()
-        }
+        CartManager.shared.addItem(cartItem)
+        onUpdateCartBadge?()
+    }
     
 }

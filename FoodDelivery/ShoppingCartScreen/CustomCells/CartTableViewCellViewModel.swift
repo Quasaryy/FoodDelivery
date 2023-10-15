@@ -8,11 +8,9 @@
 import UIKit
 
 class CartTableViewCellViewModel {
-    var item: CartItem
     
-    init(item: CartItem) {
-        self.item = item
-    }
+    // MARK: - Properties
+    var item: CartItem
     
     var name: String {
         return item.dish.name
@@ -29,5 +27,11 @@ class CartTableViewCellViewModel {
     var quantity: Double {
         return Double(item.quantity)
     }
+    
+    // MARK: - init
+    init(item: CartItem) {
+        self.item = item
+    }
+    
 }
 

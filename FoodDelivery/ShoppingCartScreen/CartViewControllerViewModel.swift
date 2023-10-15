@@ -13,12 +13,17 @@ protocol CartViewControllerViewModelProtocol {
 
 class CartViewControllerViewModel: CartViewControllerViewModelProtocol {
     
+    // MARK: - Properties
     private let cartManager = CartManager.shared
     
     var numberOfItems: Int {
         return cartManager.items.count
     }
     
+}
+
+// MARK: - Methods
+extension CartViewControllerViewModel {
     func item(at index: Int) -> CartItem? {
         return cartManager.items.indices.contains(index) ? cartManager.items[index] : nil
     }
@@ -26,6 +31,5 @@ class CartViewControllerViewModel: CartViewControllerViewModelProtocol {
     func totalItemsCount() -> Int {
         return cartManager.totalItemsCount()
     }
-
+    
 }
-

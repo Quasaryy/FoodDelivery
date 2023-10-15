@@ -8,7 +8,8 @@
 import UIKit
 
 class FinalViewController: UIViewController {
-
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,9 +24,10 @@ class FinalViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // MARK: - IBActions
     @IBAction func backToMainScreenButtonTapped(_ sender: UIButton) {
         self.tabBarController?.selectedIndex = 0
         self.navigationController?.popToRootViewController(animated: false)
     }
-
+    
 }

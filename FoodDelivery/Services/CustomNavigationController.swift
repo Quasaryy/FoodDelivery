@@ -10,11 +10,9 @@ import UIKit
 class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
     
     // MARK: - Properties
-    
     private let locationViewModel = LocationManagerViewModel()
     
     // MARK:  - viewDidLoad
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -25,7 +23,6 @@ class CustomNavigationController: UINavigationController, UINavigationController
 }
 
 // MARK: - Methods
-
 extension CustomNavigationController: LocationManagerViewModelDelegate {
     
     // MARK: LocationManagerViewModelDelegate
@@ -35,7 +32,7 @@ extension CustomNavigationController: LocationManagerViewModelDelegate {
             setupNavigationBar(for: topVC)
         }
     }
-
+    
     // MARK: UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         locationViewModel.delegate = self

@@ -10,14 +10,12 @@ import UIKit
 class StartCollectionViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var foodKindImageView: UIImageView!
     @IBOutlet weak var foodKindLabel: UILabel!
     
 }
 
 // MARK: - Methods
-
 extension StartCollectionViewCell {
     func configure(with viewModel: StartCollectionViewCellViewModel) {
         foodKindLabel.text = viewModel.categoryName

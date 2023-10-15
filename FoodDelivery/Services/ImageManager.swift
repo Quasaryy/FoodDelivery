@@ -10,19 +10,16 @@ import UIKit
 class ImageManager {
     
     // MARK: - Properties
-    
     static let shared = ImageManager()
     let imageCache = NSCache<NSString, UIImage>()
     
     
     // MARK: init
-    
     private init() {}
     
 }
 
 // MARK: - Methods
-
 extension ImageManager {
     func loadImage(from url: URL?, into imageView: UIImageView) {
         guard let url = url else { return }

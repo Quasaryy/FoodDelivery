@@ -8,14 +8,17 @@
 import Foundation
 
 class SecondHorizontalCollectionViewCellViewModel {
-    let tag: Teg
     
-    init(tag: Teg) {
-        self.tag = tag
-    }
+    // MARK: - Propertis
+    let tag: Teg
     
     var tagName: String {
         return tag.rawValue
+    }
+    
+    // MARK: - init
+    init(tag: Teg) {
+        self.tag = tag
     }
     
 }
