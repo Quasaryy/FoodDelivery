@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Создаем кастомный степпер
 class CustomStepper: UIStepper {
     
     // MARK: Properties
@@ -14,18 +15,15 @@ class CustomStepper: UIStepper {
     private let defaultFontName = "SFProDisplay-Medium"
     private let defaultFontSize: CGFloat = 14
     
+    // Переопределяем значение, чтобы обновлять текст в лейбле при изменении
     override var value: Double {
         didSet {
             customLabel.text = "\(Int(value))"
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
     // MARK: - init
+    // Инициализатор для создания степпера из Interface Builder
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
@@ -35,6 +33,7 @@ class CustomStepper: UIStepper {
 
 // MARK: - Methods
 extension CustomStepper {
+    // Настройка внешнего вида и лейбла степпера
     private func setup() {
         customLabel = UILabel()
         customLabel.textAlignment = .center
@@ -52,6 +51,7 @@ extension CustomStepper {
         setupConstraints()
     }
     
+    // Настройка констрейнтов для лейбла
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             customLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -59,6 +59,7 @@ extension CustomStepper {
         ])
     }
     
+    // Обработчик события изменения значения степпера
     @objc
     private func valueChanged() {
         customLabel.text = "\(Int(value))"

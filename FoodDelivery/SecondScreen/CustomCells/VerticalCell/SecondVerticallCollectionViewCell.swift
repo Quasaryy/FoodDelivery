@@ -17,6 +17,7 @@ class SecondVerticallCollectionViewCell: UICollectionViewCell {
     // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Устанавливаем скругленные углы для foodNameView
         foodNameView.layer.cornerRadius = 10
         clipsToBounds = true
     }
@@ -25,8 +26,11 @@ class SecondVerticallCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension SecondVerticallCollectionViewCell {
+    // Настройка ячейки с данными из ViewModel
     func configure(with viewModel: SecondVerticalCollectionViewCellViewModelProtocol) {
         foodNameLabel.text = viewModel.dishName
+        
+        // Загрузка изображения блюда из указанного URL
         ImageManager.shared.loadImage(from: URL(string: viewModel.dishImageUrl), into: foodImageView)
     }
     

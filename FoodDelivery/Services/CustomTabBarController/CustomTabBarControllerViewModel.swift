@@ -9,9 +9,9 @@ import UIKit
 
 class CustomTabBarControllerViewModel {
     
-    // Вычисление высоты таббара в зависимости от условий
+    // Метод для расчета высоты таб-бара
     func calculateTabBarHeight() -> CGFloat {
-        return 88.0
+        return 88.0 // Возвращает фиксированную высоту таб-бара
     }
     
 }

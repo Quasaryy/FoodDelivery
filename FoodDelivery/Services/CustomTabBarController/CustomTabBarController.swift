@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Протокол для настройки таб-бара
 protocol CustomizableTabBar {
     func alwaysWhiteTabBar()
     func adjustTabBarItemsPosition()
@@ -45,23 +46,28 @@ class CustomTabBarController: UITabBarController {
 
 // MARK: - Methods
 extension CustomTabBarController {
+    
+    // Устанавливает таб-бар всегда белого цвета
     private func alwaysWhiteTabBar() {
         tabBar.backgroundColor = Constants.tabBarBackgroundColor
         tabBar.isTranslucent = false
     }
     
+    // Позиционирует элементы таб-бара
     private func adjustTabBarItemsPosition() {
         for item in tabBar.items! {
             item.imageInsets = UIEdgeInsets(top: Constants.yOffset, left: 0, bottom: -Constants.yOffset, right: 0)
         }
     }
     
+    // Добавляет верхнюю границу таб-бару
     private func addBorderToTabBar() {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.bounds.width, height: Constants.borderTopHeight))
         borderView.backgroundColor = Constants.borderTopColor
         tabBar.addSubview(borderView)
     }
     
+    // Изменяет высоту таб-бара
     private func changeHieghtTabBar() {
         var newFrame = tabBar.frame
         newFrame.size.height = tabBarViewModel.calculateTabBarHeight()

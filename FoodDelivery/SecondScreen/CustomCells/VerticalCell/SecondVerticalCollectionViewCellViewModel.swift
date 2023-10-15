@@ -7,20 +7,23 @@
 
 import Foundation
 
+// Протокол для ViewModel вертикальной ячейки коллекции
 protocol SecondVerticalCollectionViewCellViewModelProtocol {
-    var dishName: String { get }
-    var dishImageUrl: String { get }
+    var dishName: String { get } // Название блюда
+    var dishImageUrl: String { get } // URL изображения блюда
 }
 
-class SecondVerticalCollectionViewCellViewModel: SecondVerticalCollectionViewCellViewModelProtocol  {
+class SecondVerticalCollectionViewCellViewModel: SecondVerticalCollectionViewCellViewModelProtocol {
     
     // MARK: - Properties
     let dish: Dish
     
+    // Названия блюда
     var dishName: String {
         return dish.name
     }
     
+    // URL изображения блюда
     var dishImageUrl: String {
         return dish.imageURL
     }

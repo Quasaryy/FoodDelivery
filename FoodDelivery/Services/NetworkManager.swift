@@ -19,19 +19,20 @@ class NetworkManager {
 
 // MARK: - Methods
 extension NetworkManager {
-    func fetchData<T: Decodable>(urlString: String, completion: @escaping (T) -> Void
-    ) {
+    
+    // Метод для получения данных из сети
+    func fetchData<T: Decodable>(urlString: String, completion: @escaping (T) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let error {
-                Logger.logErrorDescription(error)
+                Logger.logErrorDescription(error) // Логируем описание ошибки
                 return
             }
             
             if let response {
-                Logger.logResponse(response)
+                Logger.logResponse(response) // Логируем ответ сервера
             }
             
             guard let remoteData = data else { return }
@@ -40,10 +41,10 @@ extension NetworkManager {
                 let decoder = JSONDecoder()
                 let dataModel = try decoder.decode(T.self, from: remoteData)
                 DispatchQueue.main.async {
-                    completion(dataModel)
+                    completion(dataModel) // Вызываем переданный блок с полученными данными
                 }
             } catch let error {
-                Logger.logErrorDescription(error)
+                Logger.logErrorDescription(error) // Логируем описание ошибки при декодировании данных
             }
         }.resume()
     }

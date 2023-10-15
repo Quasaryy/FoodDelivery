@@ -14,22 +14,22 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var verticalCollectionView: UICollectionView!
     
     // MARK: - Properties
-    let cellsInRow: CGFloat = 3
-    let sectionInsets = UIEdgeInsets(top: 0, left: 8, bottom: 5, right: 8)
-    var viewModel: SecondViewControllerViewModelProtocol = SecondViewControllerViewModel()
-    var selectedTag: Teg = .allMenu
-    var selectedTagIndex: Int = 0
-    let activeCell = UIColor(red: 51/255, green: 100/255, blue: 224/255, alpha: 1)
-    let inactiveCell = UIColor(red: 248/255, green: 247/255, blue: 245/255, alpha: 1)
-    var currentCollectionViewType: CollectionViewType?
+    let cellsInRow: CGFloat = 3 // Количество ячеек в строке для вертикальной коллекции
+    let sectionInsets = UIEdgeInsets(top: 0, left: 8, bottom: 5, right: 8) // Отступы для коллекций
+    var viewModel: SecondViewControllerViewModelProtocol = SecondViewControllerViewModel() // ViewModel для контроллера
+    var selectedTag: Teg = .allMenu // Выбранный тег по умолчанию
+    var selectedTagIndex: Int = 0 // Индекс выбранного тега
+    let activeCell = UIColor(red: 51/255, green: 100/255, blue: 224/255, alpha: 1) // Цвет активной ячейки
+    let inactiveCell = UIColor(red: 248/255, green: 247/255, blue: 245/255, alpha: 1) // Цвет неактивной ячейки
+    var currentCollectionViewType: CollectionViewType? // Текущий тип коллекции (горизонтальная или вертикальная)
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = viewModel.getCategoryName()
+        self.title = viewModel.getCategoryName() // Устанавливаем заголовок на основе категории
         viewModel.fetchData {
-            self.horizontalCollectionView.reloadData()
-            self.verticalCollectionView.reloadData()
+            self.horizontalCollectionView.reloadData() // Обновляем горизонтальную коллекцию после загрузки данных
+            self.verticalCollectionView.reloadData() // Обновляем вертикальную коллекцию после загрузки данных
         }
     }
     
@@ -39,11 +39,11 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == horizontalCollectionView {
-            return viewModel.numberOfTags()
+            return viewModel.numberOfTags() // Возвращаем количество доступных тегов для горизонтальной коллекции.
         } else if collectionView == verticalCollectionView {
-            return viewModel.filteredDishes(forTag: selectedTag).count
+            return viewModel.filteredDishes(forTag: selectedTag).count // Возвращаем количество отфильтрованных блюд для выбранного тега для вертикальной коллекции.
         }
-        return 0
+        return 0 // Возвращаем ноль по умолчанию.
     }
     
     // MARK: Creating and casting the cell
@@ -53,11 +53,12 @@ extension SecondViewController: UICollectionViewDataSource {
         
         switch currentType {
             case .horizontal:
+                // Если это горизонтальная коллекция, создаем и конфигурируем ячейку для тега.
                 if let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as? SecondHorizontalCollectionViewCell, let tag = viewModel.tag(at: indexPath.item) {
                     let cellViewModel = SecondHorizontalCollectionViewCellViewModel(tag: tag)
                     tagCell.configure(with: cellViewModel)
                     
-                    // Устанавливаем цвет фона для активной и неактивной ячейки
+                    // Устанавливаем цвет фона для активной и неактивной ячейки в зависимости от выбранного тега.
                     if indexPath.item == selectedTagIndex {
                         tagCell.backgroundColor = activeCell
                         tagCell.foodTag.textColor = .white
@@ -70,6 +71,7 @@ extension SecondViewController: UICollectionViewDataSource {
                 }
                 
             case .vertical:
+                // Если это вертикальная коллекция, создаем и конфигурируем ячейку для блюда.
                 if let foodCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodCell", for: indexPath) as? SecondVerticallCollectionViewCell, let dish = viewModel.dish(at: indexPath.item) {
                     let cellViewModel = SecondVerticalCollectionViewCellViewModel(dish: dish)
                     foodCell.configure(with: cellViewModel)
@@ -77,7 +79,7 @@ extension SecondViewController: UICollectionViewDataSource {
                 }
         }
         
-        return cell ?? UICollectionViewCell()
+        return cell ?? UICollectionViewCell() // Возвращаем созданную ячейку или пустую ячейку по умолчанию.
     }
     
 }
@@ -133,7 +135,6 @@ extension SecondViewController: UICollectionViewDelegate, UICollectionViewDelega
                 }
             case .vertical:
                 if let selectedDish = viewModel.dish(at: indexPath.item) {
-                    // Здесь инициализируем менеджер бейджей и назначаем его модальному представлению
                     let modalView = ModalWindowManager.shared.presentModalWindow(from: self, dish: selectedDish)
                     modalView?.badgeManager = TabBarBadgeManager(tabBarController: tabBarController)
                     

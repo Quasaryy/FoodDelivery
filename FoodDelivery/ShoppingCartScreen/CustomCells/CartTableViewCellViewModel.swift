@@ -10,22 +10,22 @@ import UIKit
 class CartTableViewCellViewModel {
     
     // MARK: - Properties
-    var item: CartItem
+    var item: CartItem // Элемент корзины
     
     var name: String {
-        return item.dish.name
+        return item.dish.name // Название продукта
     }
     
     var priceAndWeight: String {
-        return "\(item.dish.price) ₽ ‧ \(item.dish.weight)г"
+        return "\(item.dish.price) ₽ ‧ \(item.dish.weight)г" // Цена и вес продукта
     }
     
     var imageURL: String {
-        return item.dish.imageURL
+        return item.dish.imageURL // URL изображения продукта
     }
     
     var quantity: Double {
-        return Double(item.quantity)
+        return Double(item.quantity) // Количество продукта
     }
     
     // MARK: - init
@@ -34,4 +34,3 @@ class CartTableViewCellViewModel {
     }
     
 }
-

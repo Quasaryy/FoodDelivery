@@ -17,9 +17,10 @@ class StartCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension StartCollectionViewCell {
+    // Метод для настройки ячейки с данными из ViewModel
     func configure(with viewModel: StartCollectionViewCellViewModel) {
-        foodKindLabel.text = viewModel.categoryName
-        ImageManager.shared.loadImage(from: viewModel.imageURL, into: foodKindImageView)
+        foodKindLabel.text = viewModel.categoryName // Установка названия категории
+        ImageManager.shared.loadImage(from: viewModel.imageURL, into: foodKindImageView) // Загрузка изображения категории
     }
     
 }

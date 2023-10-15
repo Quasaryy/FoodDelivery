@@ -7,11 +7,13 @@
 
 import UIKit
 
+// Протокол для управления анимациями
 protocol Animating {
     func animateModalViewDisappearance(_ modalView: UIView, completionActions: @escaping () -> Void)
     func animateModalViewAppearance(for view: UIView, withDuration duration: TimeInterval)
 }
 
+// Класс для управления анимациями
 class AnimationManager {
     
     // MARK: - Properties
@@ -25,6 +27,7 @@ class AnimationManager {
 
 // MARK: - Methods
 extension AnimationManager {
+    // Метод для анимации исчезновения модального окна
     func animateModalViewDisappearance(_ modalView: UIView, completionActions: @escaping () -> Void) {
         UIView.animate(withDuration: defaultDuration, animations: {
             modalView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -37,6 +40,7 @@ extension AnimationManager {
         }
     }
     
+    // Метод для анимации появления модального окна
     func animateModalViewAppearance(for view: UIView, withDuration duration: TimeInterval = 0.1) {
         view.alpha = 0.0
         view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)

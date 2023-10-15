@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Протокол для управления корзиной
 protocol CartManaging {
     func addItem(_ item: CartItem)
     func removeItem(at index: Int)
@@ -16,6 +17,7 @@ protocol CartManaging {
     func clearCart()
 }
 
+// Класс для управления корзиной
 class CartManager {
     
     // MARK: - Properties
@@ -66,6 +68,7 @@ extension CartManager {
         }
     }
     
+    // Метод для очистки корзины
     func clearCart() {
         items.removeAll()
     }

@@ -22,6 +22,7 @@ class SecondHorizontalCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension SecondHorizontalCollectionViewCell {
+    // Метод для настройки ячейки данными из ViewModel
     func configure(with viewModel: SecondHorizontalCollectionViewCellViewModelProtocol) {
         foodTag.text = viewModel.tagName
     }

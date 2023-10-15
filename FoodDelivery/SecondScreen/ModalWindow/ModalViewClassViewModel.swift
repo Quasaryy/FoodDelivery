@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Протокол, описывающий интерфейс ViewModel для модального представления
 protocol ModalViewClassViewModelProtocol {
     var dishName: String { get }
     var dishDescription: String { get }
@@ -21,6 +22,7 @@ protocol ModalViewClassViewModelProtocol {
     var onUpdateCartBadge: (() -> Void)? { get set }
 }
 
+// Реализация ViewModel для модального представления
 class ModalViewClassViewModel: ModalViewClassViewModelProtocol {
     
     // MARK: - Properties
@@ -28,26 +30,32 @@ class ModalViewClassViewModel: ModalViewClassViewModelProtocol {
     
     var onUpdateCartBadge: (() -> Void)?
     
+    // Название блюда
     var dishName: String {
         return dish.name
     }
     
+    // Описание блюда
     var dishDescription: String {
         return dish.description
     }
     
+    // Цена блюда в формате "X ₽"
     var price: String {
         return "\(dish.price) ₽"
     }
     
+    // Вес блюда
     var weight: String {
         return "· \(dish.weight)г"
     }
     
+    // Данные изображения блюда
     var imageData: Data? {
         return ImageManager.shared.getCachedImageData(from: dish.imageURL)
     }
     
+    // Статус "Избранное"
     var isFavorite: Bool {
         get {
             return dish.isFavorite
@@ -57,22 +65,25 @@ class ModalViewClassViewModel: ModalViewClassViewModelProtocol {
         }
     }
     
+    // Замыкание для обработки изменения статуса "Избранное"
     var onFavoriteStatusChanged: ((Bool) -> Void)?
     
-    // MARK: - init
+    // MARK: - Инициализация
     init(dish: Dish) {
         self.dish = dish
     }
     
 }
 
-// MARK: - Methods
+// MARK: - Методы
 extension ModalViewClassViewModel {
+    // Переключение статуса "Избранное"
     func toggleFavorite() {
         dish.isFavorite.toggle()
         onFavoriteStatusChanged?(dish.isFavorite)
     }
     
+    // Добавление товара в корзину
     func addItemToCart() {
         let cartItem = CartItem(dish: self.dish, name: self.dish.name, quantity: 1, totalSum: self.dish.price)
         CartManager.shared.addItem(cartItem)

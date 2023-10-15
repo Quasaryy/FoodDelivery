@@ -19,7 +19,7 @@ class CartViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Подписываемся на уведомление
+        // Подписываемся на уведомление о изменении количества товаров в корзине
         NotificationCenter.default.addObserver(self, selector: #selector(cartItemQuantityChanged), name: NSNotification.Name("cartItemQuantityChanged"), object: nil)
     }
     
@@ -47,13 +47,13 @@ class CartViewController: UIViewController {
     
     // MARK: - deinit
     deinit {
+        // Удаляем наблюдатель за уведомлением
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("cartItemQuantityChanged"), object: nil)
     }
     
 }
 
 // MARK: - UITableViewDataSource
-
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItems
@@ -65,27 +65,23 @@ extension CartViewController: UITableViewDataSource {
         if let item = viewModel.item(at: indexPath.row) {
             let cellViewModel = CartTableViewCellViewModel(item: item)
             cartCell.configureCell(with: cellViewModel)
-            cartCell.delegate = self // Установите себя делегатом
-            cartCell.tag = indexPath.row // Установите тег, чтобы идентифицировать ячейку
+            cartCell.delegate = self // Устанавливаем себя делегатом
+            cartCell.tag = indexPath.row // Устанавливаем тег для идентификации ячейки
         }
         
         return cartCell
     }
-    
-    
-    
 }
 
 // MARK: - UITableViewDelegate
-
 extension CartViewController: UITableViewDelegate {
-    
-    
+    // пока пусто
 }
 
+// MARK: - CartTableViewCellDelegate
 extension CartViewController: CartTableViewCellDelegate {
     func stepperValueChanged(at index: Int, newValue: Int) {
-        // Обновите модель данных и таблицу на основе индекса и нового значения степпера
+        // Обновляем модель данных и таблицу на основе индекса и нового значения степпера
         CartManager.shared.updateQuantity(for: CartManager.shared.items[index].dish, to: newValue)
         tableView.reloadData()
         // Проверка на ноль и удаление ячейки
@@ -105,7 +101,7 @@ extension CartViewController {
             let cartTabItem = tabItems[2]
             cartTabItem.badgeValue = CartManager.shared.totalItemsCount() > 0 ? "\(CartManager.shared.totalItemsCount())" : nil
         }
-        // Обновляем сумму заказа на кнопке (зависит от вашего интерфейса)
+        // Обновляем сумму заказа на кнопке
         let totalCartValue = CartManager.shared.totalCartValue()
         paymentButton.setTitle("Оплатить \(UtilityManager.shared.formatNumber(totalCartValue) ?? "0") ₽", for: .normal)
         

@@ -7,6 +7,7 @@
 
 import CoreLocation
 
+// Протокол для предоставления информации о местоположении
 protocol LocationProvider {
     func fetchCityName(completion: @escaping (String?) -> Void)
 }
@@ -14,11 +15,14 @@ protocol LocationProvider {
 class LocationManager: NSObject, CLLocationManagerDelegate, LocationProvider {
     
     // MARK: - Properties
+    
     private var locationManager = CLLocationManager()
     private var geocoder = CLGeocoder()
     private var completion: ((String?) -> Void)?
     
     // MARK: - init
+    
+    // Инициализатор класса LocationManager
     override init() {
         super.init()
         locationManager.delegate = self
@@ -30,6 +34,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate, LocationProvider {
 
 // MARK: - Methods
 extension LocationManager {
+    
+    // Запрос информации о городе
     func fetchCityName(completion: @escaping (String?) -> Void) {
         self.completion = completion
         locationManager.startUpdatingLocation()
@@ -40,6 +46,7 @@ extension LocationManager {
         }
     }
     
+    // Обработчик обновления местоположения
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         Logger.log("Получены координаты местоположения.")
         guard let location = locations.last else { return }
@@ -63,10 +70,12 @@ extension LocationManager {
         }
     }
     
+    // Обработчик ошибки при получении местоположения
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         Logger.log("Ошибка при получении местоположения: \(error.localizedDescription)")
     }
     
+    // Обработчик изменения статуса авторизации
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         Logger.log("Статус авторизации изменился: \(status.rawValue)")
     }
