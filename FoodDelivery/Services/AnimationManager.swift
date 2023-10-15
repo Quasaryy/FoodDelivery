@@ -32,12 +32,12 @@ extension AnimationManager {
         UIView.animate(withDuration: defaultDuration, animations: {
             modalView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             modalView.alpha = 0.0
-        }) { (_) in
+        }, completion: { (_) in
             // Возвращаем modalView к его исходному состоянию
             modalView.transform = .identity
             modalView.alpha = 1.0
             completionActions()
-        }
+        })
     }
     
     // Метод для анимации появления модального окна
