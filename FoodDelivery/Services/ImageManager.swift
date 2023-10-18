@@ -30,19 +30,37 @@ extension ImageManager {
     func loadImage(from url: URL?, into imageView: UIImageView) {
         guard let url else { return }
         
+        // Инициализация и настройка активити индикатора
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.center = CGPoint(x: imageView.bounds.size.width / 2, y: imageView.bounds.size.height / 2)
+        activityIndicator.hidesWhenStopped = true
+        imageView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
         // Проверяем, есть ли изображение в кэше
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             DispatchQueue.main.async {
                 imageView.image = cachedImage // Отображаем изображение из кэша
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
             }
             return
         }
         
         DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url), let image = UIImage(data: data) else { return }
+            guard let data = try? Data(contentsOf: url), let image = UIImage(data: data) else {
+                DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
+                    activityIndicator.removeFromSuperview()
+                }
+                return
+            }
             self.imageCache.setObject(image, forKey: url.absoluteString as NSString) // Кэшируем загруженное изображение
+            
             DispatchQueue.main.async {
                 imageView.image = image // Отображаем загруженное изображение
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
             }
         }
     }
